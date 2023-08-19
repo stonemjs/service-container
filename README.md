@@ -1,2 +1,2 @@
-# service-container-js
-Vanilla Javascript DI Service container with proposal decorator config
+# Noowow Service container
+DI Service container with proposal decorator config
