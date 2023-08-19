@@ -1,0 +1,90 @@
+{
+  "name": "@stone-js/service-container",
+  "version": "0.0.0",
+  "description": "Vanilla Javascript IoC Service Container with proposal decorator, proxy resolver and destructuring injection",
+  "author": "Mr. Stone <evensstone@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": "git@github.com:stonemjs/service-container.git",
+  "homepage": "https://github.com/stonemjs/service-container#readme",
+  "bugs": {
+    "url": "https://github.com/stonemjs/service-container/issues"
+  },
+  "keywords": [
+    "DI",
+    "IoC",
+    "StoneJS",
+    "Service",
+    "Factory",
+    "Provider",
+    "Injector",
+    "Container",
+    "Injection",
+    "Singleton"
+  ],
+  "files": [
+    "/dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": [
+        "./dist/declarations.d.ts",
+        "./dist/Container.d.ts"
+      ],
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "lint": "ts-standard src",
+    "lint:fix": "ts-standard --fix src tests",
+    "predoc": "rimraf docs",
+    "doc": "typedoc",
+    "prebuild": "rimraf dist && npm run doc",
+    "build": "rollup -c",
+    "test": "vitest run",
+    "test:cvg": "npm run test -- --coverage",
+    "test:text": "npm run test:cvg -- --coverage.reporter=text",
+    "test:html": "npm run test:cvg -- --coverage.reporter=html",
+    "test:clover": "npm run test:cvg -- --coverage.reporter=clover",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.9.0",
+    "@types/validator": "^13.12.2",
+    "@vitest/coverage-v8": "^2.1.4",
+    "husky": "^9.1.6",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.1.5",
+    "rollup-plugin-node-externals": "^6.1.2",
+    "ts-standard": "^12.0.2",
+    "tslib": "^2.8.1",
+    "typedoc": "^0.26.11",
+    "typedoc-plugin-markdown": "^4.2.10",
+    "typescript": "^5.6.3",
+    "validator": "^13.12.0",
+    "vitest": "^2.1.4"
+  },
+  "ts-standard": {
+    "globals": [
+      "it",
+      "jest",
+      "test",
+      "expect",
+      "describe",
+      "beforeEach"
+    ]
+  }
+}
