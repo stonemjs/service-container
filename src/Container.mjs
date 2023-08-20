@@ -1,11 +1,12 @@
 import Provider from "./Provider.mjs"
+import ContainerException from "./exceptions/ContainerException.mjs"
 import Factory from "./models/Factory.mjs"
 import Instance from "./models/Instance.mjs"
 import Singleton from "./models/Singleton.mjs"
 
 export default class Container {
   constructor (configurations) {
-    if (!configurations) throw new ContainerConfigurationException()
+    if (!configurations) throw new ContainerException(ContainerException.CONFIG_TYPE)
     this._providers = new Set()
     this._bindings = new WeakMap()
     this._configurations = configurations
@@ -70,9 +71,7 @@ export default class Container {
     if (this._bindings.has(key)) {
       return this._bindings.get(key).resolve(this)
     }
-
-    // Nothing found, throw an error
-    throw new BindingResolutionException(key)
+    throw new ContainerException(ContainerException.RESOLUTION_TYPE, key)
   }
 
   /**
@@ -82,9 +81,9 @@ export default class Container {
    * @param  {Provider} provider
    * @return {this}
    */
-  provider (providerClass) {
-    if (providerClass !== Provider) throw new ProviderRegistrationException(providerClass)
-    const provider = new providerClass(this)
+  provider (ProviderClass) {
+    if (ProviderClass !== Provider) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
+    const provider = new ProviderClass(this)
     provider.register()
     !this._providers.has(provider) && this._providers.add(provider)
     return this
