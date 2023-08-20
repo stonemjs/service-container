@@ -99,6 +99,52 @@ export default class Container {
    */
   clear () {
     this._bindings.clear()
+    this._providers.clear()
     return this
+  }
+
+  /**
+   * Auto Discover services
+   *
+   * @return {Promise}
+   */
+  async discovering () {
+    (await this._importServiceClasses()).forEach(item => {
+      if (!item.metadata) throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, item)
+      this._autoBinding(item, item)
+    })
+  }
+
+  _autoBinding (name, value) {
+    if (!this._bindings.has(name)) {
+      if (value.metadata) {
+        const dependencies = value.metadata.dependencies ?? []
+        for (const item of dependencies) {
+          this._autoBinding(item.value, item.value)
+        }
+        const deps = Object.fromEntries(dependencies.map(item => [ item.name, this.make(item.value.metadata ? item.value : item.name) ]))
+        const resolver = () => new value(deps)
+        value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
+      } else {
+        this.instance(name, value)
+      }
+    }
+  }
+
+  async _importServiceClasses () {
+    const classes = new Set()
+    for (const path of this._configurations.service.paths) {
+      try {
+        const files = await import(`base/${path}/**/*.mjs`)
+        for (const file of files) {
+          const item = file.default
+          item.metadata && !classes.has(item) && classes.add(item)
+        }
+      } catch (e) {
+        console.log('Error while importing services', e);
+        throw new ContainerException(ContainerException.SERVICE_NOT_FOUND_TYPE, file)
+      }
+    }
+    return classes
   }
 }

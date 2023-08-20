@@ -2,7 +2,9 @@ export default class ContainerException extends Error {
   static get CONFIG_TYPE () { return 'config' }
   static get PROVIDER_TYPE () { return 'provider' }
   static get RESOLUTION_TYPE () { return 'resolution' }
+  static get NOT_A_SERVICE_TYPE () { return 'not_a_service' }
   static get DECORATOR_VALUE_TYPE () { return 'decorator_value' }
+  static get SERVICE_NOT_FOUND_TYPE () { return 'service_not_found' }
 
   constructor (type, message) {
     this.type = type
@@ -14,8 +16,10 @@ export default class ContainerException extends Error {
     const messages = {
       [ContainerException.CONFIG_TYPE]: 'No configurations provided.',
       [ContainerException.RESOLUTION_TYPE]: this.getResolutionMessage(message),
-      [ContainerException.DECORATOR_VALUE_TYPE]: 'No configurations provided for this decorator',
-      [ContainerException.PROVIDER_TYPE]: `This class(${message}) is not a provider. Class must extends Provider class`,
+      [ContainerException.SERVICE_NOT_FOUND_TYPE]: `Service(${message}) not found.`,
+      [ContainerException.DECORATOR_VALUE_TYPE]: 'No configurations provided for this decorator.',
+      [ContainerException.PROVIDER_TYPE]: `This class(${message}) is not a provider. Class must extends Provider class.`,
+      [ContainerException.NOT_A_SERVICE_TYPE]: `This (${message}) is not service. Must contains metadata static property or must user @Service decorator`,
     }
     return messages[type] ?? 'An error has occured.'
   }
