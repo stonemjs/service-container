@@ -1,15 +1,14 @@
 import Provider from "./Provider.mjs"
-import ContainerException from "./exceptions/ContainerException.mjs"
 import Factory from "./models/Factory.mjs"
 import Instance from "./models/Instance.mjs"
 import Singleton from "./models/Singleton.mjs"
+import ContainerException from "./exceptions/ContainerException.mjs"
+import { SERVICE_TYPE } from "./decorators/service.mjs"
 
 export default class Container {
-  constructor (configurations) {
-    if (!configurations) throw new ContainerException(ContainerException.CONFIG_TYPE)
+  constructor () {
+    this._bindings = new Map()
     this._providers = new Set()
-    this._bindings = new WeakMap()
-    this._configurations = configurations
   }
 
   /**
@@ -82,7 +81,7 @@ export default class Container {
    * @return {this}
    */
   provider (ProviderClass) {
-    if (ProviderClass !== Provider) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
+    if (!ProviderClass.prototype instanceof Provider) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
     const provider = new ProviderClass(this)
     provider.register()
     !this._providers.has(provider) && this._providers.add(provider)
@@ -106,21 +105,22 @@ export default class Container {
   /**
    * Auto Discover services
    *
-   * @return {Promise}
+   * @return {this}
    */
-  async discovering () {
-    (await this._importServiceClasses()).forEach(item => {
+  discovering (services = []) {
+    (services ?? []).forEach(item => {
       if (!item.metadata) throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, item)
       this._autoBinding(item, item)
     })
+    return this
   }
 
   _autoBinding (name, value) {
     if (!this._bindings.has(name)) {
-      if (value.metadata) {
+      if (value.metadata && value.metadata.type === SERVICE_TYPE) {
         const dependencies = value.metadata.dependencies ?? []
         for (const item of dependencies) {
-          this._autoBinding(item.value, item.value)
+          this._autoBinding(item.value.metadata ? item.value : item.name, item.value)
         }
         const deps = Object.fromEntries(dependencies.map(item => [ item.name, this.make(item.value.metadata ? item.value : item.name) ]))
         const resolver = () => new value(deps)
@@ -129,22 +129,5 @@ export default class Container {
         this.instance(name, value)
       }
     }
-  }
-
-  async _importServiceClasses () {
-    const classes = new Set()
-    for (const path of this._configurations.service.paths) {
-      try {
-        const files = await import(`base/${path}/**/*.mjs`)
-        for (const file of files) {
-          const item = file.default
-          item.metadata && !classes.has(item) && classes.add(item)
-        }
-      } catch (e) {
-        console.log('Error while importing services', e);
-        throw new ContainerException(ContainerException.SERVICE_NOT_FOUND_TYPE, file)
-      }
-    }
-    return classes
   }
 }

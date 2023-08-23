@@ -8,7 +8,7 @@ export default class Factory extends ResolverBinding {
    * @return {any}
    */
   resolve (container) {
-    this.hasResolved = this.hasResolved === false || true
+    this.hasResolved = true
     return this.resolver(container)
   }
 }

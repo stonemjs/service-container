@@ -7,19 +7,20 @@ export default class ContainerException extends Error {
   static get SERVICE_NOT_FOUND_TYPE () { return 'service_not_found' }
 
   constructor (type, message) {
+    super()
     this.type = type
     this.name = 'noowow.service_container'
-    super(this.getMessage(message))
+    this.message = this.getMessage(type, message)
   }
 
-  getMessage (message) {
+  getMessage (type, message) {
     const messages = {
       [ContainerException.CONFIG_TYPE]: 'No configurations provided.',
       [ContainerException.RESOLUTION_TYPE]: this.getResolutionMessage(message),
       [ContainerException.SERVICE_NOT_FOUND_TYPE]: `Service(${message}) not found.`,
       [ContainerException.DECORATOR_VALUE_TYPE]: 'No configurations provided for this decorator.',
       [ContainerException.PROVIDER_TYPE]: `This class(${message}) is not a provider. Class must extends Provider class.`,
-      [ContainerException.NOT_A_SERVICE_TYPE]: `This (${message}) is not service. Must contains metadata static property or must user @Service decorator`,
+      [ContainerException.NOT_A_SERVICE_TYPE]: `This (${message}) is not service. Must contains metadata static property or must use @Service decorator`,
     }
     return messages[type] ?? 'An error has occured.'
   }
