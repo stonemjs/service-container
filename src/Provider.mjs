@@ -1,4 +1,4 @@
-export default class Provider {
+export class Provider {
   /**
    * Create a new instance of Provider.
    *
@@ -16,7 +16,7 @@ export default class Provider {
    * Register any application services.
    */
   register () {}
-  
+
   /**
    * Bootstrap any application services.
    */

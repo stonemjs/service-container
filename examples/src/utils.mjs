@@ -1,8 +1,8 @@
 import path from 'path'
-import { URL } from 'url'
+import { Url } from 'url'
 
 export const getFilename = (relativePath = '') => {
-  return new URL(relativePath, import.meta.url).pathname
+  return new Url(relativePath, import.meta.url).pathname
 }
 
 export const getDirectory = (relativePath = '') => {

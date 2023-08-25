@@ -1,11 +1,11 @@
-import Provider from "./Provider.mjs"
-import Factory from "./models/Factory.mjs"
-import Instance from "./models/Instance.mjs"
-import Singleton from "./models/Singleton.mjs"
-import ContainerException from "./exceptions/ContainerException.mjs"
-import { SERVICE_TYPE } from "./decorators/service.mjs"
+import { Provider } from './Provider.mjs'
+import Factory from './models/Factory.mjs'
+import Instance from './models/Instance.mjs'
+import Singleton from './models/Singleton.mjs'
+import ContainerException from './exceptions/ContainerException.mjs'
+import { SERVICE_TYPE } from './decorators/Service.mjs'
 
-export default class Container {
+export class Container {
   constructor () {
     this._bindings = new Map()
     this._providers = new Set()
@@ -81,7 +81,7 @@ export default class Container {
    * @return {this}
    */
   provider (ProviderClass) {
-    if (!ProviderClass.prototype instanceof Provider) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
+    if (!(ProviderClass.prototype instanceof Provider)) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
     const provider = new ProviderClass(this)
     provider.register()
     !this._providers.has(provider) && this._providers.add(provider)
@@ -122,8 +122,9 @@ export default class Container {
         for (const item of dependencies) {
           this._autoBinding(item.value.metadata ? item.value : item.name, item.value)
         }
-        const deps = Object.fromEntries(dependencies.map(item => [ item.name, this.make(item.value.metadata ? item.value : item.name) ]))
-        const resolver = () => new value(deps)
+        const deps = Object.fromEntries(dependencies.map(item => [item.name, this.make(item.value.metadata ? item.value : item.name)]))
+        const Klass = value
+        const resolver = () => new Klass(deps)
         value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
       } else {
         this.instance(name, value)

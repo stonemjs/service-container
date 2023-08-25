@@ -1,4 +1,4 @@
-import ResolverBinding from "./ResolverBinding.mjs"
+import ResolverBinding from './ResolverBinding.mjs'
 
 export default class Factory extends ResolverBinding {
   /**

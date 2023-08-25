@@ -1,25 +1,22 @@
-import UserService from "../services/UserService.mjs";
+import UserService from "../services/UserService.mjs"
+import { Service } from "@noowow-community/service-container-js"
 
+@Service({
+  dependencies: [
+    { name: 'userService', value: UserService }
+  ]
+})
 export default class UserController {
-  static get metadata () {
-    return {
-      type: 'service',
-      dependencies: [
-        { name: '$userService', value: UserService }
-      ]
-    }
-  }
-
-  constructor ({ $userService }) {
-    this.$userService = $userService
+  constructor ({ userService }) {
+    this.userService = userService
   }
 
   list(request) {
     console.log('User controller list:', request);
-    console.log('User controller user service:', this.$userService.list());
+    console.log('User controller user service:', this.userService.list());
   }
 
   show(request) {
-    console.log('User controller show:', this.$userService.show(request.id));
+    console.log('User controller show:', this.userService.show(request.id));
   }
 }

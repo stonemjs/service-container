@@ -1,6 +1,6 @@
 const path = require('path')
-const CopyPlugin = require("copy-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -8,18 +8,14 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin({
-      patterns: [
-        { from: './index.d.ts' },
-      ],
-    }),
+    new NodePolyfillPlugin({ excludeAliases: ['console'] }),
   ],
   output: {
     libraryTarget: 'umd',
     filename: 'index.js',
     globalObject: 'this',
-    library: 'NooContainer',
-    path: path.resolve(__dirname, 'dist'),
+    library: 'ContainerExample',
+    path: path.resolve(__dirname, 'public'),
   },
   module: {
     rules: [
@@ -27,6 +23,10 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.m?js$/,
+        use: 'glob-import-loader'
       },
     ]
   }
