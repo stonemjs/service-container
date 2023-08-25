@@ -1,4 +1,4 @@
-import { Service } from "@noowow-community/service-container-js"
+import { Service } from "@noowow-community/service-container"
 import ConfigurationService from "../services/ConfigurationService.mjs"
 
 @Service({

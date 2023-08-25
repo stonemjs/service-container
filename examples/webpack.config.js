@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: path.resolve(__dirname, './src/index.mjs'),
   devtool: 'inline-source-map',
   plugins: [
@@ -15,7 +15,7 @@ module.exports = {
     filename: 'index.js',
     globalObject: 'this',
     library: 'ContainerExample',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.m?js$/,
-        use: 'glob-import-loader'
+        use: 'webpack-import-glob'
       },
     ]
   }

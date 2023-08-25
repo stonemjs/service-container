@@ -1,8 +1,12 @@
-import { Service } from "@noowow-community/service-container-js"
+import { Service } from "@noowow-community/service-container"
+
+const configs = {
+  config: { middleware: { name: 'Vensy Middleware' }, user: { email: 'jonh.doe@noowow.com', names: ['Jonh', 'Doe', 'James'] } }
+}
 
 @Service({
   dependencies: [
-    { name: 'config', value: { config: { middleware: { name: 'Vensy Middleware' }, user: { email: 'jonh.doe@noowow.com', names: ['Jonh', 'Doe', 'James'] } } } }
+    { name: 'config', value: configs }
   ]
 })
 export default class ConfigurationService {

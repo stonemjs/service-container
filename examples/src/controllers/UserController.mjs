@@ -1,5 +1,5 @@
 import UserService from "../services/UserService.mjs"
-import { Service } from "@noowow-community/service-container-js"
+import { Service } from "@noowow-community/service-container"
 
 @Service({
   dependencies: [

@@ -6,6 +6,8 @@
 # Node artifact files
 node_modules/
 dist/
+public/
+noowow-community-service-container-*
 
 # Compiled Java class files
 *.class

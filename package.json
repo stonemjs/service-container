@@ -1,11 +1,11 @@
 {
-  "name": "@noowow-community/service-container-js",
+  "name": "@noowow-community/service-container",
   "version": "0.0.1",
   "description": "Vanilla Javascript DI Service container with proposal decorator config",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "repository": "git@github.com:noowow-community/service-container-js.git",
+  "repository": "git@github.com:noowow-community/service-container.git",
   "author": "Mr Stone <pierre.evens16@gmail.com>",
   "license": "MIT",
   "files": [
@@ -23,9 +23,9 @@
     "Singleton",
     "Factory"
   ],
-  "homepage": "https://github.com/noowow-community/service-container-js#readme",
+  "homepage": "https://github.com/noowow-community/service-container#readme",
   "bugs": {
-    "url": "https://github.com/noowow-community/service-container-js/issues"
+    "url": "https://github.com/noowow-community/service-container/issues"
   },
   "exports": {
     ".": {
@@ -42,10 +42,10 @@
   "scripts": {
     "lint": "eslint src --ext mjs",
     "lint:test": "eslint tests --ext mjs",
-    "lint:fix": "eslint --fix --ext .js,.mjs src/ tests/",
+    "lint:fix": "eslint --fix --ext mjs src/ tests/",
     "release": "yarn build && npm publish",
-    "build": "yarn lint && webpack --mode production",
-    "dev": "yarn lint && webpack --mode development",
+    "build": "yarn lint && webpack --env prod",
+    "build:dev": "yarn lint && webpack --env dev",
     "test": "yarn lint:test && mocha --experimental-modules --no-warnings test/**/*.spec.mjs"
   },
   "devDependencies": {

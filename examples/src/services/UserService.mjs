@@ -1,7 +1,8 @@
 import ConfigurationService from "./ConfigurationService.mjs";
-import { Service } from "@noowow-community/service-container-js"
+import { Service } from "@noowow-community/service-container"
 
 @Service({
+  singleton: true,
   dependencies: [
     { name: 'configurationService', value: ConfigurationService }
   ]

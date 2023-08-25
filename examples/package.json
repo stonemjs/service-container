@@ -2,15 +2,15 @@
   "name": "noowow-container-example",
   "version": "1.0.0",
   "description": "Noowow service container example",
-  "main": "./public/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "start": "node ./public/index.js",
-    "build": "webpack --mode development"
+    "build": "webpack",
+    "start": "npm run build && node ./dist/index.js"
   },
   "author": "Mr Stone <pierre.evens16@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@noowow-community/service-container-js": "file:../noowow-community-service-container-js-v0.0.1.tgz",
+    "@noowow-community/service-container": "file:../noowow-community-service-container-v0.0.1.tgz",
     "glob": "^10.3.3"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "glob-import-loader": "^1.2.0",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "webpack": "^5.58.2",
-    "webpack-cli": "^4.9.0"
+    "webpack-cli": "^4.9.0",
+    "webpack-import-glob": "^2.0.0"
   }
 }
