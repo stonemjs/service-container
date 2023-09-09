@@ -4,9 +4,9 @@ import AuthMiddleware from "./middleware/AuthMiddleware.mjs"
 import UserController from "./controllers/UserController.mjs"
 
 const services = modules
-  .filter(v => v.default)
-  .map(v => v.default)
-  .filter(v => v.metadata && v.metadata.type === 'service')
+  .reduce((prev, curr) => {
+    return prev.concat(Object.values(curr).filter(v => (v.metadata ?? {}).type === 'service'))
+  }, [])
 
 container.discovering(services)
 console.log('Binding values:', container.bindings.size);

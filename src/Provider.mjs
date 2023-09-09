@@ -1,15 +1,17 @@
 export class Provider {
+  #container
+
   /**
    * Create a new instance of Provider.
    *
    * @param  {Container} container
    */
   constructor (container) {
-    this._container = container
+    this.#container = container
   }
 
   get container () {
-    return this._container
+    return this.#container
   }
 
   /**

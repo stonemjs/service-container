@@ -6,9 +6,12 @@ import ContainerException from './exceptions/ContainerException.mjs'
 import { SERVICE_TYPE } from './decorators/Service.mjs'
 
 export class Container {
+  #bindings
+  #providers
+
   constructor () {
-    this._bindings = new Map()
-    this._providers = new Set()
+    this.#bindings = new Map()
+    this.#providers = new Set()
   }
 
   /**
@@ -17,7 +20,7 @@ export class Container {
    * @return {Binding}
    */
   get bindings () {
-    return this._bindings
+    return this.#bindings
   }
 
   /**
@@ -28,7 +31,7 @@ export class Container {
    * @return {this}
    */
   instance (key, value) {
-    this._bindings.set(key, new Instance(value))
+    this.#bindings.set(key, new Instance(value))
     return this
   }
 
@@ -42,7 +45,7 @@ export class Container {
    * @return {this}
    */
   singleton (key, resolver) {
-    this._bindings.set(key, new Singleton(resolver))
+    this.#bindings.set(key, new Singleton(resolver))
     return this
   }
 
@@ -56,7 +59,7 @@ export class Container {
    * @return {this}
    */
   binding (key, resolver) {
-    this._bindings.set(key, new Factory(resolver))
+    this.#bindings.set(key, new Factory(resolver))
     return this
   }
 
@@ -67,10 +70,20 @@ export class Container {
    * @return {any}
    */
   make (key) {
-    if (this._bindings.has(key)) {
-      return this._bindings.get(key).resolve(this)
+    if (this.#bindings.has(key)) {
+      return this.#bindings.get(key).resolve(this)
     }
     throw new ContainerException(ContainerException.RESOLUTION_TYPE, key)
+  }
+
+  /**
+   * Check if value is already bound in the container by its key.
+   *
+   * @param  {any} key
+   * @return {boolean}
+   */
+  bound (key) {
+    return this.#bindings.has(key)
   }
 
   /**
@@ -84,7 +97,7 @@ export class Container {
     if (!(ProviderClass.prototype instanceof Provider)) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
     const provider = new ProviderClass(this)
     provider.register()
-    !this._providers.has(provider) && this._providers.add(provider)
+    !this.#providers.has(provider) && this.#providers.add(provider)
     return this
   }
 
@@ -97,8 +110,8 @@ export class Container {
    * @return {this}
    */
   clear () {
-    this._bindings.clear()
-    this._providers.clear()
+    this.#bindings.clear()
+    this.#providers.clear()
     return this
   }
 
@@ -110,21 +123,21 @@ export class Container {
   discovering (services = []) {
     (services ?? []).forEach(item => {
       if (!item.metadata) throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, item)
-      this._autoBinding(item, item)
+      this.#autoBinding(item, item)
     })
     return this
   }
 
-  _autoBinding (name, value) {
-    if (!this._bindings.has(name)) {
-      if (value.metadata && value.metadata.type === SERVICE_TYPE) {
+  #autoBinding (name, value) {
+    if (!this.bound(name)) {
+      if (value.metadata?.type === SERVICE_TYPE) {
         const dependencies = value.metadata.dependencies ?? []
         for (const item of dependencies) {
-          this._autoBinding(item.value.metadata ? item.value : item.name, item.value)
+          this.#autoBinding(item.value.metadata ? item.value : item.name, item.value)
         }
         const deps = Object.fromEntries(dependencies.map(item => [item.name, this.make(item.value.metadata ? item.value : item.name)]))
-        const Klass = value
-        const resolver = () => new Klass(deps)
+        const Class = value
+        const resolver = () => new Class(deps)
         value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
       } else {
         this.instance(name, value)

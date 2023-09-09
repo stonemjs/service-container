@@ -9,6 +9,7 @@ export default class Factory extends ResolverBinding {
    */
   resolve (container) {
     this.hasResolved = true
-    return this.resolver(container)
+    this.value = this.resolver(container)
+    return this.value
   }
 }

@@ -1,6 +1,8 @@
 import Binding from './Binding.mjs'
 
 export default class ResolverBinding extends Binding {
+  #resolver
+
   /**
    * Create a new instance of ResolverBinding.
    *
@@ -9,7 +11,7 @@ export default class ResolverBinding extends Binding {
   constructor (resolver) {
     super()
     this.hasResolved = false
-    this._resolver = resolver
+    this.#resolver = resolver
   }
 
   /**
@@ -18,6 +20,6 @@ export default class ResolverBinding extends Binding {
    * @return {Function}
    */
   get resolver () {
-    return this._resolver
+    return this.#resolver
   }
 }
