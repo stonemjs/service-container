@@ -1,4 +1,3 @@
-import { Provider } from './Provider.mjs'
 import Factory from './models/Factory.mjs'
 import Instance from './models/Instance.mjs'
 import Singleton from './models/Singleton.mjs'
@@ -94,11 +93,15 @@ export class Container {
    * @return {this}
    */
   provider (ProviderClass) {
-    if (!(ProviderClass.prototype instanceof Provider)) throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
     const provider = new ProviderClass(this)
-    provider.register()
-    !this.#providers.has(provider) && this.#providers.add(provider)
-    return this
+
+    if (provider.register) {
+      provider.register()
+      !this.#providers.has(provider) && this.#providers.add(provider)
+      return this
+    }
+
+    throw new ContainerException(ContainerException.PROVIDER_TYPE, ProviderClass)
   }
 
   /**
