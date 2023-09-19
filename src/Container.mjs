@@ -1,14 +1,27 @@
+import Proxiable from './Proxiable.mjs'
 import Factory from './models/Factory.mjs'
 import Instance from './models/Instance.mjs'
 import Singleton from './models/Singleton.mjs'
 import ContainerException from './exceptions/ContainerException.mjs'
 import { SERVICE_TYPE } from './decorators/Service.mjs'
 
-export class Container {
+export class Container extends Proxiable {
+  #aliases
   #bindings
   #providers
 
   constructor () {
+    super({
+      get: (target, prop, receiver) => {
+        if (target.bound.apply(this, [prop])) {
+          return target.make.apply(this, [prop])
+        } else {
+          return Reflect.get(target, prop, receiver)
+        }
+      }
+    })
+
+    this.#aliases = new Map()
     this.#bindings = new Map()
     this.#providers = new Set()
   }
@@ -22,6 +35,26 @@ export class Container {
     return this.#bindings
   }
 
+  get aliases () {
+    return this.#aliases
+  }
+
+  alias (key, alias) {
+    if (key !== alias) {
+      this.#aliases.set(alias, key)
+      return this
+    }
+    throw new ContainerException(`${key} is aliased to itself.`)
+  }
+
+  isAlias (alias) {
+    return this.#aliases.has(alias)
+  }
+
+  getAlias (alias) {
+    return this.#aliases.get(alias)
+  }
+
   /**
    * Bind a single instance or value into the container under the provided key.
    *
@@ -30,7 +63,13 @@ export class Container {
    * @return {this}
    */
   instance (key, value) {
+    this.#setClassNameAsAlias(key)
     this.#bindings.set(key, new Instance(value))
+    return this
+  }
+
+  instanceIf (key, value) {
+    !this.bound(key) && this.instance(key, value)
     return this
   }
 
@@ -44,7 +83,13 @@ export class Container {
    * @return {this}
    */
   singleton (key, resolver) {
+    this.#setClassNameAsAlias(key)
     this.#bindings.set(key, new Singleton(resolver))
+    return this
+  }
+
+  singletonIf (key, resolver) {
+    !this.bound(key) && this.singleton(key, resolver)
     return this
   }
 
@@ -58,7 +103,13 @@ export class Container {
    * @return {this}
    */
   binding (key, resolver) {
+    this.#setClassNameAsAlias(key)
     this.#bindings.set(key, new Factory(resolver))
+    return this
+  }
+
+  bindingIf (key, resolver) {
+    !this.bound(key) && this.binding(key, resolver)
     return this
   }
 
@@ -69,10 +120,17 @@ export class Container {
    * @return {any}
    */
   make (key) {
+    key = this.isAlias(key) ? this.getAlias(key) : key
+
     if (this.#bindings.has(key)) {
       return this.#bindings.get(key).resolve(this)
     }
+
     throw new ContainerException(ContainerException.RESOLUTION_TYPE, key)
+  }
+
+  factory (key) {
+    return () => this.make(key)
   }
 
   /**
@@ -82,7 +140,15 @@ export class Container {
    * @return {boolean}
    */
   bound (key) {
-    return this.#bindings.has(key)
+    if (this.#aliases.has(key)) {
+      return this.#bindings.has(this.getAlias(key))
+    } else {
+      return this.#bindings.has(key)
+    }
+  }
+
+  has (key) {
+    return this.bound(key)
   }
 
   /**
@@ -131,6 +197,13 @@ export class Container {
     return this
   }
 
+  #setClassNameAsAlias (Class) {
+    if (!/^\s*class/.test(Class.toString())) return
+    let name = Class.prototype.constructor.name
+    name = name.charAt(0).toLowerCase() + name.slice(1)
+    return this.alias(Class, name)
+  }
+
   #autoBinding (name, value) {
     if (!this.bound(name)) {
       if (value.metadata?.type === SERVICE_TYPE) {
@@ -138,10 +211,19 @@ export class Container {
         for (const item of dependencies) {
           this.#autoBinding(item.value.metadata ? item.value : item.name, item.value)
         }
+
         const deps = Object.fromEntries(dependencies.map(item => [item.name, this.make(item.value.metadata ? item.value : item.name)]))
         const Class = value
         const resolver = () => new Class(deps)
+
         value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
+
+        if (value.metadata.alias) {
+          const aliases = [].concat(Array.isArray(value.metadata.alias) ? value.metadata.alias : [value.metadata.alias])
+          for (const alias of aliases) {
+            this.alias(name, alias)
+          }
+        }
       } else {
         this.instance(name, value)
       }

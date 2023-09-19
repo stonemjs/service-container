@@ -9,6 +9,11 @@ const services = modules
   }, [])
 
 container.discovering(services)
-console.log('Binding values:', container.bindings.size);
-container.make(AuthMiddleware).handleRequest({ body: { name: 'Evens' } })
-container.make(UserController).list({ body: { name: 'Evens' } })
+console.log('Binding values:', container.bindings.size)
+console.log('Aliases values:', container.aliases.size, Array.from(container.aliases.keys()))
+const { userController, config, userService } = container
+console.log('user service-------', userService.list())
+console.log('controller', userController.list({}))
+console.log('user email', container.bound('config'), config)
+// container.make(AuthMiddleware).handleRequest({ body: { name: 'Evens' } })
+// container.make(UserController).list({ body: { name: 'Evens' } })

@@ -2,6 +2,7 @@ import UserService from "../services/UserService.mjs"
 import { Service } from "@noowow-community/service-container"
 
 @Service({
+  alias: 'userController',
   dependencies: [
     { name: 'userService', value: UserService }
   ]
@@ -14,6 +15,7 @@ export default class UserController {
   list(request) {
     console.log('User controller list:', request);
     console.log('User controller user service:', this.userService.list());
+    return this.userService.list()
   }
 
   show(request) {
