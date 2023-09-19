@@ -39,12 +39,14 @@ export class Container extends Proxiable {
     return this.#aliases
   }
 
-  alias (key, alias) {
-    if (key !== alias) {
+  alias (key, aliases) {
+    for (const alias of Array.isArray(aliases) ? aliases : [aliases]) {
+      if (key === alias) {
+        throw new ContainerException(`${key} is aliased to itself.`)
+      }
       this.#aliases.set(alias, key)
-      return this
     }
-    throw new ContainerException(`${key} is aliased to itself.`)
+    return this
   }
 
   isAlias (alias) {
@@ -190,11 +192,24 @@ export class Container extends Proxiable {
    * @return {this}
    */
   discovering (services = []) {
-    (services ?? []).forEach(item => {
-      if (!item.metadata) throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, item)
-      this.#autoBinding(item, item)
-    })
+    for (const service of (services ?? [])) {
+      if (!service.metadata) throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, service)
+      this.autoBinding(service.metadata.name ?? service, service)
+    }
     return this
+  }
+
+  autoBinding (name, value) {
+    if (!this.bound(name)) {
+      if (value.metadata?.type === SERVICE_TYPE) {
+        const Class = value
+        const resolver = () => new Class(this)
+        value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
+        this.alias(name, value.metadata.alias ?? [])
+      } else {
+        this.instance(name, value)
+      }
+    }
   }
 
   #setClassNameAsAlias (Class) {
@@ -202,31 +217,5 @@ export class Container extends Proxiable {
     let name = Class.prototype.constructor.name
     name = name.charAt(0).toLowerCase() + name.slice(1)
     return this.alias(Class, name)
-  }
-
-  #autoBinding (name, value) {
-    if (!this.bound(name)) {
-      if (value.metadata?.type === SERVICE_TYPE) {
-        const dependencies = value.metadata.dependencies ?? []
-        for (const item of dependencies) {
-          this.#autoBinding(item.value.metadata ? item.value : item.name, item.value)
-        }
-
-        const deps = Object.fromEntries(dependencies.map(item => [item.name, this.make(item.value.metadata ? item.value : item.name)]))
-        const Class = value
-        const resolver = () => new Class(deps)
-
-        value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
-
-        if (value.metadata.alias) {
-          const aliases = [].concat(Array.isArray(value.metadata.alias) ? value.metadata.alias : [value.metadata.alias])
-          for (const alias of aliases) {
-            this.alias(name, alias)
-          }
-        }
-      } else {
-        this.instance(name, value)
-      }
-    }
   }
 }

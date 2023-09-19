@@ -1,11 +1,7 @@
 import { Service } from "@noowow-community/service-container"
-import ConfigurationService from "../services/ConfigurationService.mjs"
 
 @Service({
-  singleton: true,
-  dependencies: [
-    { name: 'configurationService', value: ConfigurationService }
-  ]
+  singleton: false
 })
 export default class AuthMiddleware {
   constructor ({ configurationService }) {

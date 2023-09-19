@@ -4,15 +4,11 @@ const configs = {
   config: { middleware: { name: 'Vensy Middleware' }, user: { email: 'jonh.doe@noowow.com', names: ['Jonh', 'Doe', 'James'] } }
 }
 
-@Service({
-  dependencies: [
-    { name: 'config', value: configs }
-  ]
-})
+@Service()
 export default class ConfigurationService {
-  constructor ({ config }) {
-    if (!config) throw new Error('No configurations provided')
-    this.configurations = config
+  constructor () {
+    if (!configs) throw new Error('No configurations provided')
+    this.configurations = configs
   }
 
   get (keyword, scope = 'config') {

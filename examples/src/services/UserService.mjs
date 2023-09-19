@@ -1,12 +1,6 @@
-import ConfigurationService from "./ConfigurationService.mjs";
 import { Service } from "@noowow-community/service-container"
 
-@Service({
-  singleton: true,
-  dependencies: [
-    { name: 'configurationService', value: ConfigurationService }
-  ]
-})
+@Service()
 export default class UserService {
   constructor ({ configurationService }) {
     this.configurationService = configurationService

@@ -1,11 +1,7 @@
-import UserService from "../services/UserService.mjs"
 import { Service } from "@noowow-community/service-container"
 
 @Service({
-  alias: 'userController',
-  dependencies: [
-    { name: 'userService', value: UserService }
-  ]
+  alias: 'userCtrl'
 })
 export default class UserController {
   constructor ({ userService }) {
