@@ -193,29 +193,43 @@ export class Container extends Proxiable {
    */
   discovering (services = []) {
     for (const service of (services ?? [])) {
-      if (!service.metadata) throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, service)
-      this.autoBinding(service.metadata.name ?? service, service)
+      if (service.metadata?.type !== SERVICE_TYPE) {
+        throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, service)
+      }
+      const { name, singleton = true, alias } = service.metadata
+      this.autoBinding(name ?? service, service, singleton, alias ?? [])
     }
     return this
   }
 
-  autoBinding (name, value) {
+  autoBinding (name, Value, singleton = true, alias = []) {
     if (!this.bound(name)) {
-      if (value.metadata?.type === SERVICE_TYPE) {
-        const Class = value
-        const resolver = (container) => new Class(container)
-        value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
-        this.alias(name, value.metadata.alias ?? [])
+      if (this.#isFunction(Value)) {
+        const resolver = this.#isArrowFunction(Value) ? (container) => Value(container) : (container) => new Value(container)
+        singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
       } else {
-        this.instance(name, value)
+        this.instance(name, Value)
       }
+      this.alias(name, alias)
     }
   }
 
   #setClassNameAsAlias (Class) {
-    if (!/^\s*class/.test(Class.toString())) return
+    if (!this.#isClass(Class)) return
     let name = Class.prototype.constructor.name
     name = name.charAt(0).toLowerCase() + name.slice(1)
     return this.alias(Class, name)
+  }
+
+  #isFunction (value) {
+    return typeof value === 'function'
+  }
+
+  #isClass (value) {
+    return this.#isFunction(value) && /^\s*class/.test(value.toString())
+  }
+
+  #isArrowFunction (value) {
+    return this.#isFunction(value) && value.toString().includes('=>') && !value.prototype?.constructor
   }
 }
