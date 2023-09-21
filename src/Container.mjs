@@ -203,7 +203,7 @@ export class Container extends Proxiable {
     if (!this.bound(name)) {
       if (value.metadata?.type === SERVICE_TYPE) {
         const Class = value
-        const resolver = () => new Class(this)
+        const resolver = (container) => new Class(container)
         value.metadata.singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
         this.alias(name, value.metadata.alias ?? [])
       } else {
