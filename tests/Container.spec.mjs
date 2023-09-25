@@ -1,5 +1,4 @@
-import { assert } from 'chai'
-import ContainerException from '../src/exceptions/ContainerException.mjs'
+import { ContainerException } from '../src/exceptions/ContainerException.mjs'
 import { Container } from '../src/index.mjs'
 
 describe('Container', () => {
@@ -13,7 +12,7 @@ describe('Container', () => {
     it('should throw a `ContainerException` if the binding does not exist', function () {
       const container = new Container()
 
-      assert.throws(
+      this.assert.throws(
         () => container.make('StoneJS'),
         ContainerException,
         'Failed to resolve a binding with a key of type string with a value of \'StoneJS\' from the service container.'
