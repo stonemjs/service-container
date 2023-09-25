@@ -1,15 +1,23 @@
-import Proxiable from './Proxiable.mjs'
-import Factory from './models/Factory.mjs'
-import Instance from './models/Instance.mjs'
-import Singleton from './models/Singleton.mjs'
-import ContainerException from './exceptions/ContainerException.mjs'
+import { Proxiable } from './Proxiable.mjs'
+import { Factory } from './models/Factory.mjs'
+import { Instance } from './models/Instance.mjs'
+import { Singleton } from './models/Singleton.mjs'
 import { SERVICE_TYPE } from './decorators/Service.mjs'
+import { ContainerException } from './exceptions/ContainerException.mjs'
 
+/**
+ * Class representing a Container.
+ *
+ * @author Mr. Stone <pierre.evens16@gmail.com>
+ */
 export class Container extends Proxiable {
   #aliases
   #bindings
   #providers
 
+  /**
+   * Create an container.
+   */
   constructor () {
     super({
       get: (target, prop, receiver) => {
@@ -35,10 +43,22 @@ export class Container extends Proxiable {
     return this.#bindings
   }
 
+  /**
+   * Retrieve the value of the aliases property.
+   *
+   * @return {Binding}
+   */
   get aliases () {
     return this.#aliases
   }
 
+  /**
+   * Set a binding as alias.
+   *
+   * @param  {any}               key     - The binding key.
+   * @param  {(string|string[])} aliases - Take a string or an array of string as alias.
+   * @return {this}
+   */
   alias (key, aliases) {
     for (const alias of Array.isArray(aliases) ? aliases : [aliases]) {
       if (key === alias) {
@@ -49,10 +69,22 @@ export class Container extends Proxiable {
     return this
   }
 
+  /**
+   * Is alias exists.
+   *
+   * @param  {string} alias - The alias.
+   * @return {boolean}
+   */
   isAlias (alias) {
     return this.#aliases.has(alias)
   }
 
+  /**
+   * Get a binding by it's alias.
+   *
+   * @param  {(string|string[])} alias - The alias name.
+   * @return {any}
+   */
   getAlias (alias) {
     return this.#aliases.get(alias)
   }
@@ -60,8 +92,8 @@ export class Container extends Proxiable {
   /**
    * Bind a single instance or value into the container under the provided key.
    *
-   * @param  {any} key
-   * @param  {any} value
+   * @param  {any} key   - The key
+   * @param  {any} value - The value
    * @return {this}
    */
   instance (key, value) {
@@ -70,6 +102,13 @@ export class Container extends Proxiable {
     return this
   }
 
+  /**
+   * Bind a single instance or value into the container under the provided key if not bound.
+   *
+   * @param  {any} key   - The key
+   * @param  {any} value - The value
+   * @return {this}
+   */
   instanceIf (key, value) {
     !this.bound(key) && this.instance(key, value)
     return this
@@ -80,8 +119,8 @@ export class Container extends Proxiable {
    * resolver will be run once and the resulting value will be returned for all
    * subsequent resolutions.
    *
-   * @param  {any}      key
-   * @param  {Resolver} resolver
+   * @param  {any}      key      - The key
+   * @param  {Resolver} resolver - The resolver function
    * @return {this}
    */
   singleton (key, resolver) {
@@ -90,6 +129,15 @@ export class Container extends Proxiable {
     return this
   }
 
+  /**
+   * Bind a resolver function into the container under the provided key. The
+   * resolver will be run once and the resulting value will be returned for all
+   * subsequent resolutions if not bound.
+   *
+   * @param  {any}      key      - The key
+   * @param  {Resolver} resolver - The resolver function
+   * @return {this}
+   */
   singletonIf (key, resolver) {
     !this.bound(key) && this.singleton(key, resolver)
     return this
@@ -100,8 +148,8 @@ export class Container extends Proxiable {
    * resolver will be run each time the key is resolved resulting in new
    * instances each resolution.
    *
-   * @param  {any}      key
-   * @param  {Resolver} resolver
+   * @param  {any}      key      - The key
+   * @param  {Resolver} resolver - The resolver function
    * @return {this}
    */
   binding (key, resolver) {
@@ -110,6 +158,15 @@ export class Container extends Proxiable {
     return this
   }
 
+  /**
+   * Bind a resolver function into the container under the provided key. The
+   * resolver will be run each time the key is resolved resulting in new
+   * instances each resolution if not bound.
+   *
+   * @param  {any}      key      - The key
+   * @param  {Resolver} resolver - The resolver function
+   * @return {this}
+   */
   bindingIf (key, resolver) {
     !this.bound(key) && this.binding(key, resolver)
     return this
@@ -118,7 +175,7 @@ export class Container extends Proxiable {
   /**
    * Resolve a value from the container by its key.
    *
-   * @param  {any} key
+   * @param  {any} key - The key
    * @return {any}
    */
   make (key) {
@@ -131,6 +188,12 @@ export class Container extends Proxiable {
     throw new ContainerException(ContainerException.RESOLUTION_TYPE, key)
   }
 
+  /**
+   * Resolve a value from the container by its key and return it in a factory function.
+   *
+   * @param  {any} key - The key
+   * @return {Function}
+   */
   factory (key) {
     return () => this.make(key)
   }
@@ -138,7 +201,7 @@ export class Container extends Proxiable {
   /**
    * Check if value is already bound in the container by its key.
    *
-   * @param  {any} key
+   * @param  {any} key - The key
    * @return {boolean}
    */
   bound (key) {
@@ -149,6 +212,12 @@ export class Container extends Proxiable {
     }
   }
 
+  /**
+   * Check if value is already bound in the container by its key.
+   *
+   * @param  {any} key - The key
+   * @return {boolean}
+   */
   has (key) {
     return this.bound(key)
   }
@@ -157,7 +226,7 @@ export class Container extends Proxiable {
    * Add a service provider into the container to register one or many bindings
    * as a unit.
    *
-   * @param  {Provider} provider
+   * @param  {Provider} providerClass - A class extended the Provider Class
    * @return {this}
    */
   provider (ProviderClass) {
@@ -173,11 +242,8 @@ export class Container extends Proxiable {
   }
 
   /**
-   * Reset the container so that all fake bindings are removed and all original
-   * bindings will be used when requested. If a hard request is run, then both
-   * the fakes and the bindings will be cleared.
+   * Reset the container so that all bindings are removed.
    *
-   * @param  {boolean} hard
    * @return {this}
    */
   clear () {
@@ -187,11 +253,12 @@ export class Container extends Proxiable {
   }
 
   /**
-   * Auto Discover services
+   * Auto Discover services with zero configuration binding.
    *
+   * @param  {Object[]} services - Classes representing the services to be registered in the container.
    * @return {this}
    */
-  discovering (services = []) {
+  discovering (services) {
     for (const service of (services ?? [])) {
       if (service.metadata?.type !== SERVICE_TYPE) {
         throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, service)
@@ -202,6 +269,15 @@ export class Container extends Proxiable {
     return this
   }
 
+  /**
+   * Auto Discover service with zero configuration binding if not bound.
+   *
+   * @param  {any}               name             - A key to make the binding. Can be anything.
+   * @param  {any}               value            - The item to bind.
+   * @param  {boolean}           [singleton=true] - Bind as singleton when true.
+   * @param  {(string|string[])} [alias=[]]       - A key to make the binding.
+   * @return {this}
+   */
   autoBinding (name, Value, singleton = true, alias = []) {
     if (!this.bound(name)) {
       if (this.#isFunction(Value)) {
@@ -212,6 +288,7 @@ export class Container extends Proxiable {
       }
       this.alias(name, alias)
     }
+    return this
   }
 
   #setClassNameAsAlias (Class) {

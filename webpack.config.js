@@ -1,5 +1,4 @@
 const path = require('path')
-const CopyPlugin = require("copy-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = (env) => {
@@ -9,17 +8,12 @@ module.exports = (env) => {
     devtool: env.dev && 'inline-source-map',
     plugins: [
       new CleanWebpackPlugin(),
-      new CopyPlugin({
-        patterns: [
-          { from: './index.d.ts' },
-        ],
-      }),
     ],
     output: {
       libraryTarget: 'umd',
       filename: 'index.js',
       globalObject: 'this',
-      library: 'NooContainer',
+      library: 'StoneJSContainer',
       path: path.resolve(__dirname, 'dist'),
     },
     module: {

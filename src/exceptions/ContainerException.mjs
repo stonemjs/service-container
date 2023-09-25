@@ -1,4 +1,9 @@
-export default class ContainerException extends Error {
+/**
+ * Class representing a ContainerException.
+ */
+export class ContainerException extends Error {
+  static CODE = 'IoC_CON-500'
+
   static get CONFIG_TYPE () { return 'config' }
   static get PROVIDER_TYPE () { return 'provider' }
   static get RESOLUTION_TYPE () { return 'resolution' }
@@ -6,17 +11,19 @@ export default class ContainerException extends Error {
   static get DECORATOR_VALUE_TYPE () { return 'decorator_value' }
   static get SERVICE_NOT_FOUND_TYPE () { return 'service_not_found' }
 
-  constructor (type, message) {
+  constructor (type, message, metadata = {}) {
     super()
     this.type = type
-    this.name = 'noowow.service_container'
-    this.message = this.getMessage(type, message)
+    this.metadata = metadata
+    this.code = ContainerException.CODE
+    this.name = 'stonejs.ioc.service_container'
+    this.message = this.#getMessage(type, message)
   }
 
-  getMessage (type, message) {
+  #getMessage (type, message) {
     const messages = {
       [ContainerException.CONFIG_TYPE]: 'No configurations provided.',
-      [ContainerException.RESOLUTION_TYPE]: this.getResolutionMessage(message),
+      [ContainerException.RESOLUTION_TYPE]: this.#getResolutionMessage(message),
       [ContainerException.SERVICE_NOT_FOUND_TYPE]: `Service(${message}) not found.`,
       [ContainerException.DECORATOR_VALUE_TYPE]: 'No configurations provided for this decorator.',
       [ContainerException.PROVIDER_TYPE]: `This class(${message}) is not a provider. Class must extends Provider class or must use @ServiceProvider decorator.`,
@@ -25,7 +32,7 @@ export default class ContainerException extends Error {
     return messages[type] ?? 'An error has occured.'
   }
 
-  getResolutionMessage (key) {
+  #getResolutionMessage (key) {
     let value = ''
 
     switch (true) {
@@ -56,5 +63,20 @@ export default class ContainerException extends Error {
     }
 
     return `Failed to resolve a binding with a key of ${value} from the service container.`
+  }
+
+  /**
+   * Get Error as a ResponseException's Object.
+   *
+   * @return {ResponseException}.
+   */
+  getResponse () {
+    return {
+      error: true,
+      code: this.code,
+      name: this.name,
+      content: this.message,
+      metadata: this.metadata
+    }
   }
 }

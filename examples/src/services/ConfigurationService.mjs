@@ -1,7 +1,7 @@
-import { Service } from "@noowow-community/service-container"
+import { Service } from "@stone-js/service-container"
 
 const configs = {
-  config: { middleware: { name: 'Vensy Middleware' }, user: { email: 'jonh.doe@noowow.com', names: ['Jonh', 'Doe', 'James'] } }
+  config: { middleware: { name: 'Vensy Middleware' }, user: { email: 'jonh.doe@stone-js.com', names: ['Jonh', 'Doe', 'James'] } }
 }
 
 @Service()

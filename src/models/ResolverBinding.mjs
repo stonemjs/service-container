@@ -1,6 +1,9 @@
-import Binding from './Binding.mjs'
+import { Binding } from './Binding.mjs'
 
-export default class ResolverBinding extends Binding {
+/**
+ * Class representing a ResolverBinding.
+ */
+export class ResolverBinding extends Binding {
   #resolver
 
   /**

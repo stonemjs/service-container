@@ -14,9 +14,9 @@ describe('Container', () => {
       const container = new Container()
 
       assert.throws(
-        () => container.make('Noowow'),
+        () => container.make('StoneJS'),
         ContainerException,
-        'Failed to resolve a binding with a key of type string with a value of \'Noowow\' from the service container.'
+        'Failed to resolve a binding with a key of type string with a value of \'StoneJS\' from the service container.'
       )
     })
   })

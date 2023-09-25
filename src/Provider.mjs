@@ -1,9 +1,11 @@
+/**
+ * Class representing a Provider.
+ */
 export class Provider {
   #container
 
   /**
    * Create a new instance of Provider.
-   *
    * @param  {Container} container
    */
   constructor (container) {

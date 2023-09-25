@@ -1,3 +1,3 @@
-import { Container } from "@noowow-community/service-container"
+import { Container } from "@stone-js/service-container"
 
 export const container = new Container()

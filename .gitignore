@@ -7,7 +7,7 @@
 node_modules/
 dist/
 public/
-noowow-community-service-container-*
+stone-js-service-container-*
 
 # Compiled Java class files
 *.class

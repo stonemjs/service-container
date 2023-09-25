@@ -1,8 +1,11 @@
-export default class Binding {
+/**
+ * Class representing a Binding.
+ */
+export class Binding {
   /**
    * Create a new instance of Binding.
    *
-   * @param {any = null}  value
+   * @param {any} [value=null]
    */
   constructor (value = null) {
     this.value = value

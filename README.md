@@ -1,5 +1,2 @@
-# Noowow Service container
+# StoneJS Service container
 DI Service container with proposal decorator config
-
-#glob-import-loader
-

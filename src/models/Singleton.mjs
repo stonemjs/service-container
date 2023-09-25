@@ -1,6 +1,9 @@
-import ResolverBinding from './ResolverBinding.mjs'
+import { ResolverBinding } from './ResolverBinding.mjs'
 
-export default class Singleton extends ResolverBinding {
+/**
+ * Class representing a Singleton.
+ */
+export class Singleton extends ResolverBinding {
   /**
    * Resolve and return the value of the binding.
    *

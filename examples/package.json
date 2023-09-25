@@ -1,7 +1,7 @@
 {
-  "name": "noowow-container-example",
+  "name": "stone-js-container-example",
   "version": "1.0.0",
-  "description": "Noowow service container example",
+  "description": "StoneJS service container example",
   "main": "./dist/index.js",
   "scripts": {
     "build": "webpack",

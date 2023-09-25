@@ -1,4 +1,4 @@
-import { Service } from "@noowow-community/service-container"
+import { Service } from "@stone-js/service-container"
 
 @Service()
 export default class UserService {

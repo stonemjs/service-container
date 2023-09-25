@@ -1,3 +1,6 @@
-import Binding from './Binding.mjs'
+import { Binding } from './Binding.mjs'
 
-export default class Instance extends Binding {}
+/**
+ * Class representing an Instance.
+ */
+export class Instance extends Binding {}
