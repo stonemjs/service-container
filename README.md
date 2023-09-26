@@ -9,10 +9,10 @@ IoC Service Container with proposal decorator, proxy resolver and destructuring 
 
 Benefits:
 
-- Proposal decorator, allow you to decorate any class as a Service that must be resolve by the service container
-- Proxy resolver, Allow you to resolve any class denpendencies with zero configuration
-- Destructuring injection, allow you to user dependencies in your class constructor using destructuring paramater
-- Autobinding, allow to bind any class with no configurations
+- Proposal decorator, allow you to decorate any class as a Service that must auto bind to the service container
+- Proxy resolver, Allow you to resolve any class denpendencies as own property of the container instance
+- Destructuring injection or Destructuring resolver, allow you to use dependencies in your class constructor using destructured parameter
+- Autobinding, allow to bind any class with zero configuration
 - Defers dependency resolution to mitigate circular references
 
 ## Table of Contents

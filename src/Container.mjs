@@ -21,10 +21,10 @@ export class Container extends Proxiable {
   constructor () {
     super({
       get: (target, prop, receiver) => {
-        if (target.bound.apply(this, [prop])) {
-          return target.make.apply(this, [prop])
-        } else {
+        if (Reflect.has(target, prop)) {
           return Reflect.get(target, prop, receiver)
+        } else {
+          return target.make.apply(this, [prop])
         }
       }
     })

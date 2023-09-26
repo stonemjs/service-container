@@ -1,7 +1,7 @@
 {
   "name": "@stone-js/service-container",
-  "version": "0.0.2",
-  "description": "Vanilla Javascript IoC Service Container with proposal decorator and proxy resolver",
+  "version": "0.0.3",
+  "description": "Vanilla Javascript IoC Service Container with proposal decorator, proxy resolver and destructuring injection",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.mts",
@@ -48,7 +48,7 @@
     "build": "yarn lint && webpack --env prod && yarn types",
     "build:dev": "yarn lint && webpack --env dev && yarn types",
     "release": "yarn test:summary && yarn build && npm publish --access public",
-    "test": "yarn lint:test && mocha --experimental-modules --no-warnings -r tests/setup.mjs tests/**/*.spec.mjs",
+    "test": "yarn lint:test && mocha --experimental-modules --no-warnings -r tests/setup.mjs tests/*.spec.mjs tests/**/*.spec.mjs",
     "test:html": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text yarn test",
     "test:lcov": "cross-env NODE_ENV=test nyc --reporter=lcovonly --reporter=text yarn test",
     "test:summary": "cross-env NODE_ENV=test nyc --reporter=text-summary yarn test",

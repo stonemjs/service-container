@@ -66,6 +66,17 @@ export class ContainerException extends Error {
   }
 
   /**
+   * The ResponseException allow to normalize response.
+   *
+   * @typedef  {Object}         ResponseException
+   * @property {boolean}        error
+   * @property {number|string}  code
+   * @property {string}         name
+   * @property {string}         content
+   * @property {Object}         metadata
+   */
+
+  /**
    * Get Error as a ResponseException's Object.
    *
    * @return {ResponseException}.

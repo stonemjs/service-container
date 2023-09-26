@@ -9,12 +9,12 @@ export default class UserController {
   }
 
   list(request) {
-    console.log('User controller list:', request);
-    console.log('User controller user service:', this.userService.list());
+    console.log('User controller list:', request)
+    console.log('User controller user service:', this.userService.list())
     return this.userService.list()
   }
 
   show(request) {
-    console.log('User controller show:', this.userService.show(request.id));
+    console.log('User controller show:', this.userService.show(request.id))
   }
 }
