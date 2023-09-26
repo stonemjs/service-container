@@ -16,7 +16,7 @@ export class Container extends Proxiable {
   #providers
 
   /**
-   * Create an container.
+   * Create a container.
    */
   constructor () {
     super({

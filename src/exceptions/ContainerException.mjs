@@ -20,6 +20,32 @@ export class ContainerException extends Error {
     this.message = this.#getMessage(type, message)
   }
 
+  /**
+   * The ResponseException allow to normalize response.
+   *
+   * @typedef  {Object}         ResponseException
+   * @property {boolean}        error
+   * @property {number|string}  code
+   * @property {string}         name
+   * @property {string}         content
+   * @property {Object}         metadata
+   */
+
+  /**
+   * Get Error as a ResponseException's Object.
+   *
+   * @return {ResponseException}.
+   */
+  getResponse () {
+    return {
+      error: true,
+      code: this.code,
+      name: this.name,
+      content: this.message,
+      metadata: this.metadata
+    }
+  }
+
   #getMessage (type, message) {
     const messages = {
       [ContainerException.CONFIG_TYPE]: 'No configurations provided.',
@@ -63,31 +89,5 @@ export class ContainerException extends Error {
     }
 
     return `Failed to resolve a binding with a key of ${value} from the service container.`
-  }
-
-  /**
-   * The ResponseException allow to normalize response.
-   *
-   * @typedef  {Object}         ResponseException
-   * @property {boolean}        error
-   * @property {number|string}  code
-   * @property {string}         name
-   * @property {string}         content
-   * @property {Object}         metadata
-   */
-
-  /**
-   * Get Error as a ResponseException's Object.
-   *
-   * @return {ResponseException}.
-   */
-  getResponse () {
-    return {
-      error: true,
-      code: this.code,
-      name: this.name,
-      content: this.message,
-      metadata: this.metadata
-    }
   }
 }

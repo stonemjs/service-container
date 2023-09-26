@@ -4,14 +4,22 @@ import { Container } from '../src/index.mjs'
 describe('Container', () => {
   const container = new Container()
 
+  beforeEach(() => {
+    container.clear()
+  })
+
   describe('make', () => {
-    beforeEach(() => {
-      container.clear()
+    it('should return a resolved instance', function () {
+      // Arrange
+      container.instance('framework', 'StoneJS')
+      // Act
+      const response = container.make('framework')
+      // Assert
+      this.assert.equal(response, 'StoneJS')
     })
 
     it('should throw a `ContainerException` if the binding does not exist', function () {
-      const container = new Container()
-
+      // Assert
       this.assert.throws(
         () => container.make('StoneJS'),
         ContainerException,
