@@ -90,6 +90,19 @@ export class Container extends Proxiable {
   }
 
   /**
+   * Set class name as camelCase alias
+   *
+   * @param  {Class} Class - The class name.
+   * @return {this}
+   */
+  asAlias (Class) {
+    if (!this.#isClass(Class)) return
+    let name = Class.prototype.constructor.name
+    name = name.charAt(0).toLowerCase() + name.slice(1)
+    return this.alias(Class, name)
+  }
+
+  /**
    * Bind a single instance or value into the container under the provided key.
    *
    * @param  {any} key   - The key
@@ -97,7 +110,6 @@ export class Container extends Proxiable {
    * @return {this}
    */
   instance (key, value) {
-    this.#setClassNameAsAlias(key)
     this.#bindings.set(key, new Instance(value))
     return this
   }
@@ -124,7 +136,6 @@ export class Container extends Proxiable {
    * @return {this}
    */
   singleton (key, resolver) {
-    this.#setClassNameAsAlias(key)
     this.#bindings.set(key, new Singleton(resolver))
     return this
   }
@@ -153,7 +164,6 @@ export class Container extends Proxiable {
    * @return {this}
    */
   binding (key, resolver) {
-    this.#setClassNameAsAlias(key)
     this.#bindings.set(key, new Factory(resolver))
     return this
   }
@@ -289,13 +299,6 @@ export class Container extends Proxiable {
       this.alias(name, alias)
     }
     return this
-  }
-
-  #setClassNameAsAlias (Class) {
-    if (!this.#isClass(Class)) return
-    let name = Class.prototype.constructor.name
-    name = name.charAt(0).toLowerCase() + name.slice(1)
-    return this.alias(Class, name)
   }
 
   #isFunction (value) {
