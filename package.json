@@ -1,6 +1,6 @@
 {
   "name": "@stone-js/service-container",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vanilla Javascript IoC Service Container with proposal decorator, proxy resolver and destructuring injection",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
