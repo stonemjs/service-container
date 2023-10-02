@@ -6,7 +6,7 @@
     // normally they are ignored as source files
     "allowJs": true,
     // Target ES Version
-    "target": "es2017",
+    "target": "ES2022",
     // Generate d.ts files
     "declaration": true,
     // This compiler run should
