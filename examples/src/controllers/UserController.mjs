@@ -1,6 +1,6 @@
-import { Service } from "@stone-js/service-container"
+import { Injectable } from '../../../src/index.mjs'
 
-@Service({
+@Injectable({
   alias: 'userCtrl'
 })
 export default class UserController {

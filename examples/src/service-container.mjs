@@ -1,3 +1,3 @@
-import { Container } from "@stone-js/service-container"
+import { Container } from '../../src/index.mjs'
 
 export const container = new Container()

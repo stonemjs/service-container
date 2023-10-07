@@ -257,15 +257,16 @@ export class Container extends Proxiable {
    * @return {this}
    */
   clear () {
+    this.#aliases.clear()
     this.#bindings.clear()
     this.#providers.clear()
     return this
   }
 
   /**
-   * Auto Discover services with zero configuration binding.
+   * Auto Discover services with zero configuration.
    *
-   * @param  {Object[]} services - Classes representing the services to be registered in the container.
+   * @param  {Function[]} services - Classes representing the services to be registered in the container.
    * @return {this}
    */
   discovering (services) {
@@ -280,7 +281,7 @@ export class Container extends Proxiable {
   }
 
   /**
-   * Auto Discover service with zero configuration binding if not bound.
+   * AutoBind value to the service container.
    *
    * @param  {any}               name             - A key to make the binding. Can be anything.
    * @param  {any}               value            - The item to bind.

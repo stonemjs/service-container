@@ -1,11 +1,11 @@
-import { Service } from "@stone-js/service-container"
+import { Service } from '../../../src/index.mjs'
 
 const configs = {
   config: { middleware: { name: 'Vensy Middleware' }, user: { email: 'jonh.doe@stone-js.com', names: ['Jonh', 'Doe', 'James'] } }
 }
 
 @Service({
-  alias: 'config'
+  alias: ['config', 'configurationService']
 })
 export default class ConfigurationService {
   constructor () {

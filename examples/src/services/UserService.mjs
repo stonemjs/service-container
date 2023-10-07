@@ -1,6 +1,8 @@
-import { Service } from "@stone-js/service-container"
+import { Service } from '../../../src/index.mjs'
 
-@Service()
+@Service({
+  alias: ['userService']
+})
 export default class UserService {
   constructor ({ configurationService }) {
     this.configurationService = configurationService

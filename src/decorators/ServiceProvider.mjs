@@ -4,10 +4,10 @@ import { Provider } from '../Provider.mjs'
 export const SERVICE_PROVIDER_TYPE = 'service_provider'
 
 /**
- * Service decorator to mark a class as a ServiceProvider
+ * ServiceProvider decorator to mark a class as a ServiceProvider
  * and autobind it's services to the container.
  *
- * @param {object} configurations - The decorator congiguration keys.
+ * @param  {object} configurations - The decorator congiguration keys.
  * @return {any}
  */
 export const ServiceProvider = (value) => {

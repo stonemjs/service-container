@@ -1,6 +1,6 @@
 import modules from "./**/*.mjs"
 import { container } from "./service-container.mjs"
-import { SERVICE_TYPE } from "@stone-js/service-container"
+import { SERVICE_TYPE } from '../../src/index.mjs'
 import AuthMiddleware from "./middleware/AuthMiddleware.mjs"
 import UserController from "./controllers/UserController.mjs"
 

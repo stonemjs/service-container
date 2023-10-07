@@ -18,8 +18,5 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-import-glob": "^2.0.0"
-  },
-  "dependencies": {
-    "@stone-js/service-container": "^0.0.3"
   }
 }
