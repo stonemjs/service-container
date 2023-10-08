@@ -1,5 +1,5 @@
 import { Provider } from '../../src/Provider.mjs'
-import { SERVICE_PROVIDER_TYPE, ServiceProvider } from '../../src/decorators/ServiceProvider.mjs'
+import { ServiceProvider } from '../../src/decorators/ServiceProvider.mjs'
 
 describe('ServiceProvider', () => {
   describe('main', () => {
@@ -10,7 +10,7 @@ describe('ServiceProvider', () => {
       const response = ServiceProvider()(UserProvider)
       // Assert
       this.assert.isOk(response.metadata)
-      this.assert.equal(response.metadata.type, SERVICE_PROVIDER_TYPE)
+      this.assert.equal(response.metadata.isServiceProvider, true)
     })
 
     it('must extend Provider class', function () {

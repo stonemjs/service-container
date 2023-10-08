@@ -2,7 +2,6 @@ import { Proxiable } from './Proxiable.mjs'
 import { Factory } from './models/Factory.mjs'
 import { Instance } from './models/Instance.mjs'
 import { Singleton } from './models/Singleton.mjs'
-import { SERVICE_TYPE } from './decorators/Service.mjs'
 import { ContainerException } from './exceptions/ContainerException.mjs'
 
 /**
@@ -269,7 +268,7 @@ export class Container extends Proxiable {
    */
   discovering (services) {
     for (const service of (services ?? [])) {
-      if (service.metadata?.type !== SERVICE_TYPE) {
+      if (!service.metadata?.isInjectable) {
         throw new ContainerException(ContainerException.NOT_A_SERVICE_TYPE, service)
       }
       const { name, singleton = true, alias } = service.metadata

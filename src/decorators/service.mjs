@@ -1,11 +1,6 @@
 import deepmerge from 'deepmerge'
 
 /**
- * SERVICE_TYPE.
- */
-export const SERVICE_TYPE = 'service'
-
-/**
  * Service decorator to mark a class as a service
  * and autobind it to the container.
  *
@@ -15,7 +10,7 @@ export const SERVICE_TYPE = 'service'
 export const Service = (value) => {
   return (target) => {
     value ??= {}
-    target.metadata = deepmerge(target.metadata ?? {}, { ...value, type: SERVICE_TYPE })
+    target.metadata = deepmerge(target.metadata ?? {}, { ...value, isInjectable: true })
     target.metadata.singleton ??= true
     return target
   }

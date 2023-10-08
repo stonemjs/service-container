@@ -1,4 +1,4 @@
-import { SERVICE_TYPE, Service } from '../../src/decorators/Service.mjs'
+import { Service } from '../../src/decorators/Service.mjs'
 
 describe('Service', () => {
   describe('main', () => {
@@ -10,7 +10,7 @@ describe('Service', () => {
       // Assert
       this.assert.isOk(response.metadata)
       this.assert.equal(response.metadata.singleton, true)
-      this.assert.equal(response.metadata.type, SERVICE_TYPE)
+      this.assert.equal(response.metadata.isInjectable, true)
     })
   })
 })

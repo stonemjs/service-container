@@ -1,6 +1,5 @@
 import modules from "./**/*.mjs"
 import { container } from "./service-container.mjs"
-import { SERVICE_TYPE } from '../../src/index.mjs'
 import AuthMiddleware from "./middleware/AuthMiddleware.mjs"
 import UserController from "./controllers/UserController.mjs"
 
@@ -10,7 +9,7 @@ import UserController from "./controllers/UserController.mjs"
 const services = modules
   .filter(v => v.default)
   .reduce((prev, curr) => {
-    return prev.concat(Object.values(curr).filter(v => v.metadata?.type === SERVICE_TYPE))
+    return prev.concat(Object.values(curr).filter(v => v.metadata?.isInjectable))
   }, [])
 
 /**
