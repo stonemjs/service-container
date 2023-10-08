@@ -96,10 +96,8 @@ export class Container extends Proxiable {
    * @return {this}
    */
   asAlias (Class) {
-    if (!this.#isClass(Class)) return
-    let name = Class.prototype.constructor.name
-    name = name.charAt(0).toLowerCase() + name.slice(1)
-    return this.alias(Class, name)
+    if (!this.#isClass(Class)) { return this }
+    return this.alias(Class, `${Class.name.charAt(0).toLowerCase()}${Class.name.slice(1)}`)
   }
 
   /**

@@ -46,14 +46,14 @@
     "lint": "eslint src --ext mjs",
     "lint:test": "eslint tests --ext mjs",
     "lint:fix": "eslint --fix --ext mjs src/ tests/",
-    "build": "yarn lint && webpack --env prod && yarn types",
-    "build:dev": "yarn lint && webpack --env dev && yarn types",
-    "release": "yarn test:summary && yarn build && npm publish --access public",
-    "test": "yarn lint:test && mocha --experimental-modules --no-warnings -r tests/setup.mjs tests/*.spec.mjs tests/**/*.spec.mjs",
-    "test:html": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text yarn test",
-    "test:lcov": "cross-env NODE_ENV=test nyc --reporter=lcovonly --reporter=text yarn test",
-    "test:summary": "cross-env NODE_ENV=test nyc --reporter=text-summary yarn test",
-    "test:text": "cross-env NODE_ENV=test nyc --reporter=text yarn test"
+    "build": "npm run lint && webpack --env prod && npm run types",
+    "build:dev": "npm run lint && webpack --env dev && npm run types",
+    "release": "npm run test:summary && npm run build && npm publish --access public",
+    "test": "npm run lint:test && mocha --experimental-modules --no-warnings -r tests/setup.mjs tests/*.spec.mjs tests/**/*.spec.mjs",
+    "test:html": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text npm run test",
+    "test:lcov": "cross-env NODE_ENV=test nyc --reporter=lcovonly --reporter=text npm run test",
+    "test:summary": "cross-env NODE_ENV=test nyc --reporter=text-summary npm run test",
+    "test:text": "cross-env NODE_ENV=test nyc --reporter=text npm run test"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",
