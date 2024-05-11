@@ -2,7 +2,7 @@ import { Factory } from './models/Factory.mjs'
 import { Instance } from './models/Instance.mjs'
 import { Singleton } from './models/Singleton.mjs'
 import { ContainerError } from './errors/ContainerError.mjs'
-import { Proxiable, isClass, isFunction, lcfirst } from '@stone-js/common'
+import { Proxiable, isConstructor, isFunction, lcfirst } from '@stone-js/common'
 
 /**
  * Class representing a Container.
@@ -64,6 +64,7 @@ export class Container extends Proxiable {
         if (key === alias) {
           throw new ContainerError(ContainerError.ALIAS_TYPE, key)
         } else if (!this.has(key)) {
+          console.log(this.#bindings.keys())
           throw new ContainerError(ContainerError.ALIAS_UNBOUND_TYPE, key)
         }
         this.#aliases.set(alias, key)
@@ -98,7 +99,7 @@ export class Container extends Proxiable {
    * @return {this}
    */
   asAlias (Class) {
-    if (!isClass(Class)) { return this }
+    if (!isConstructor(Class)) { return this }
     return this.alias(Class, lcfirst(Class.$$metadata$$?.name ?? Class.name))
   }
 
@@ -207,7 +208,7 @@ export class Container extends Proxiable {
   resolve (key, singleton = false) {
     if (this.has(key)) {
       return this.make(key)
-    } else if (isClass(key)) {
+    } else if (isConstructor(key)) {
       return this.autoBinding(key, key, singleton).make(key)
     }
 
@@ -310,7 +311,7 @@ export class Container extends Proxiable {
     Value ??= name
     if (!this.bound(name)) {
       if (isFunction(Value)) {
-        const resolver = isClass(Value) ? (container) => new Value(container) : (container) => Value(container)
+        const resolver = isConstructor(Value) ? (container) => new Value(container) : (container) => Value(container)
         singleton ? this.singleton(name, resolver) : this.binding(name, resolver)
       } else {
         this.instance(name, Value)

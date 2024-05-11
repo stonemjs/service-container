@@ -21,34 +21,18 @@
     "Injection",
     "Singleton"
   ],
-  "main": "./dist/container.cjs",
-  "module": "./dist/container.mjs",
-  "browser": "./dist/container.min.js",
-  "types": "./dist/types/container.d.mts",
   "files": [
     "/dist"
   ],
+  "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/types/container.d.mts",
-        "default": "./dist/container.mjs"
-      },
-      "require": {
-        "types": "./dist/types/container.d.mts",
-        "default": "./dist/container.cjs"
-      }
-    },
-    "./decorators": {
-      "import": {
-        "types": "./dist/types/decorators.d.mts",
-        "default": "./dist/decorators.mjs"
-      },
-      "require": {
-        "types": "./dist/types/decorators.d.mts",
-        "default": "./dist/decorators.cjs"
-      }
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/index.js"
     }
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "scripts": {
     "types": "tsc",
@@ -61,14 +45,18 @@
     "prebuild": "rimraf dist",
     "build": "npm run lint && rollup -c && npm run types",
     "release": "npm run test:text && npm run build && npm publish --access public",
+    "local_publish": "npm run build && npm publish --registry http://localhost:4873/",
+    "local_unpublish": "npm unpublish @stone-js/service-container -f --registry http://localhost:4873",
     "test": "npm run lint:test && jest",
     "test:cvg": "npm run lint:test && jest --coverage",
     "test:text": "npm run test:cvg -- --coverageReporters=text",
     "test:html": "npm run test:cvg -- --coverageReporters=html text",
     "test:lcov": "npm run test:cvg -- --coverageReporters=lcov text"
   },
+  "peerDependencies": {
+    "@stone-js/common": "^0.0.1"
+  },
   "dependencies": {
-    "@stone-js/common": "^1.0.0",
     "deepmerge": "^4.3.1"
   },
   "devDependencies": {
@@ -77,10 +65,8 @@
     "@babel/preset-env": "^7.22.20",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-multi-entry": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
     "babel-jest": "^29.7.0",
     "docdash": "^2.0.2",
     "jest": "^29.7.0",
@@ -91,9 +77,6 @@
     "rollup-plugin-node-externals": "^6.1.2",
     "standard": "^17.1.0",
     "typescript": "^5.2.2"
-  },
-  "engines": {
-    "node": "^18.0.0 || >=20.0.0"
   },
   "standard": {
     "parser": "@babel/eslint-parser",
