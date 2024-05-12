@@ -53,11 +53,9 @@
     "test:html": "npm run test:cvg -- --coverageReporters=html text",
     "test:lcov": "npm run test:cvg -- --coverageReporters=lcov text"
   },
-  "peerDependencies": {
-    "@stone-js/common": "^0.0.1"
-  },
   "dependencies": {
-    "deepmerge": "^4.3.1"
+    "deepmerge": "^4.3.1",
+    "@stone-js/common": "^0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",
