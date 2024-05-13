@@ -246,28 +246,6 @@ export class Container extends Proxiable {
   }
 
   /**
-   * Add a service provider into the container to register one or many bindings as a unit.
-   *
-   * @param  {(Function|Function[])} classes - A class extended the AbstractProvider Class
-   * @return {this}
-   */
-  provider (classes) {
-    for (const Class of [].concat(classes)) {
-      if (Class.prototype?.register) {
-        const provider = new Class(this)
-        if (!this.#providers.has(Class)) {
-          provider.register()
-          this.#providers.add(Class)
-        }
-      } else {
-        throw new ContainerError(ContainerError.PROVIDER_TYPE, Class)
-      }
-    }
-
-    return this
-  }
-
-  /**
    * Reset the container so that all bindings are removed.
    *
    * @return {this}
@@ -288,8 +266,8 @@ export class Container extends Proxiable {
   register (classes) {
     for (const Class of [].concat(classes)) {
       if (Class.$$metadata$$?.service) {
-        const { name, singleton = true, alias } = Class.$$metadata$$.service
-        this.autoBinding(name ?? Class, Class, singleton, alias ?? [])
+        const { singleton = true, alias } = Class.$$metadata$$.service
+        this.autoBinding(Class, Class, singleton, alias ?? [])
       } else {
         throw new ContainerError(ContainerError.NOT_A_SERVICE_TYPE, Class)
       }
