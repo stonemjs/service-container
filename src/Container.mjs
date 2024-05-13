@@ -64,7 +64,6 @@ export class Container extends Proxiable {
         if (key === alias) {
           throw new ContainerError(ContainerError.ALIAS_TYPE, key)
         } else if (!this.has(key)) {
-          console.log(this.#bindings.keys())
           throw new ContainerError(ContainerError.ALIAS_UNBOUND_TYPE, key)
         }
         this.#aliases.set(alias, key)
