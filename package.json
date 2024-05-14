@@ -54,7 +54,6 @@
     "test:lcov": "npm run test:cvg -- --coverageReporters=lcov text"
   },
   "dependencies": {
-    "deepmerge": "^4.3.1",
     "@stone-js/common": "^0.0.1"
   },
   "devDependencies": {
