@@ -5,6 +5,12 @@ import { ContainerError } from './errors/ContainerError.mjs'
 import { Proxiable, isConstructor, isFunction, lcfirst } from '@stone-js/common'
 
 /**
+ * Represents a binding map where properties are strings mapped to values of type T.
+ * @template T
+ * @typedef {Object<string, T>} Binding
+ */
+
+/**
  * Class representing a Container.
  *
  * @author Mr. Stone <evensstone@gmail.com>
