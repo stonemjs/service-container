@@ -1,6 +1,6 @@
 {
   "name": "@stone-js/service-container",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Vanilla Javascript IoC Service Container with proposal decorator, proxy resolver and destructuring injection",
   "author": "Mr. Stone <evensstone@gmail.com>",
   "license": "Apache-2.0",
