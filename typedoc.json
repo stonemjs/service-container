@@ -1,7 +1,7 @@
 {
   "entryPoints": ["src/**/*.ts"], // Entry point for your project, change accordingly
   "out": "docs", // Output directory for the generated documentation
-  "name": "Service container Documentation", // Project name used in the docs
+  "name": "Service Container Documentation", // Project name used in the docs
   "includeVersion": true, // Optional: Include project version in the output
   "tsconfig": "./tsconfig.json", // Path to your TypeScript configuration
   "theme": "default", // Use default or custom theme (custom themes can be pointed to by path)

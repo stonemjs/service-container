@@ -13,13 +13,13 @@ IoC Service Container with proposal decorator, proxy resolver and destructuring 
 
 ## Synopsis
 
-`Service Container` is a cutting-edge JavaScript/TypeScript tool designed to revolutionize the way you manage dependencies in your applications. By implementing the Inversion of Control (IoC) pattern, this library facilitates seamless dependency injection, allowing you to build highly decoupled and maintainable codebases.
+The **Service Container** is an advanced JavaScript/TypeScript library that helps you manage dependencies effectively in your applications. It utilizes the Inversion of Control (IoC) pattern to simplify dependency injection, allowing you to create highly decoupled and maintainable codebases.
 
-Dependency Injection (DI) is a design pattern used to implement IoC, wherein objects are given their dependencies rather than creating them internally. This approach enhances testability, reduces code duplication, and promotes adherence to the Single Responsibility Principle by allowing objects to focus solely on their core responsibilities.
+By using Dependency Injection (DI), the service container ensures that objects are provided with their dependencies from an external source, rather than creating them internally. This approach improves testability, minimizes code duplication, and promotes the Single Responsibility Principle by allowing objects to focus only on their primary functions.
 
-`Service Container` not only leverages the power of DI but also implements the Proxy pattern. This innovative feature allows you to resolve dependencies as if they were properties of the service container instance itself, and combined with destructuring, it enables immediate benefits from dependency injection by destructuring. This means you can access dependencies with minimal boilerplate code, making your development process more intuitive and efficient.
+In addition to DI, the **Service Container** implements the Proxy pattern, which lets you access dependencies as properties of the container itself. This feature, combined with destructuring, enables a streamlined approach to dependency injection, making it easy to use dependencies without the need for extra boilerplate code.
 
-With the `Service Container,` you can effortlessly register, resolve, and manage dependencies, ensuring your applications are both scalable and easy to maintain. Whether you are working on a small project or a large enterprise application, this library provides the robust foundation needed to keep your code clean, modular, and testable.
+With the **Service Container**, you can easily register, resolve, and manage dependencies, making it suitable for projects of any scale. It supports binding instances, singletons, and factories, as well as providing auto and conditional binding options. This flexibility makes your application more modular, scalable, and maintainable, while ensuring efficient dependency management throughout the development process.
 
 ## Installation
 
@@ -325,36 +325,7 @@ With this library, managing dependencies in your application becomes much simple
 
 ## Summary
 
-The Stone Service Container provides a powerful, flexible, and intuitive approach to managing dependencies in your applications. By adhering to the principles of Inversion of Control (IoC) and leveraging both the Proxy and Dependency Injection patterns, the service container allows for clean, modular, and maintainable code.
-
-### Key Features Covered:
-
-- **Binding Dependencies**: We explored how to bind instances, singletons, and factories to the container. These different binding methods help you manage your application's lifecycle effectively, ensuring dependencies are shared or instantiated as needed.
-
-- **Auto Binding and Conditional Binding**: We discussed how to use the `autoBinding` method to automatically bind classes and the various methods for conditional binding, enabling flexibility in dependency management while reducing redundant configurations.
-
-- **Resolving Dependencies**: You learned how to resolve dependencies from the container using the `make` method, as well as how to use proxy-based and conditional resolving to simplify dependency management and ensure a streamlined workflow.
-
-- **Aliases**: Setting up aliases for bindings provides an extra level of flexibility by allowing you to reference dependencies using alternative names, making code readability and access even more straightforward.
-
-- **Dependency Management and Injection**: Throughout the examples, we saw how the service container centralizes the dependency management process, allowing for easy injection and control over your application's objects and services.
-
-### Why Use the Stone Service Container?
-
-By using the Stone Service Container, you can make your application more:
-- **Modular**: With dependencies being managed centrally, you can easily swap implementations without changing client code.
-- **Testable**: Dependencies can be easily mocked or replaced during testing, improving test coverage and quality.
-- **Maintainable**: With a clear separation of concerns, your codebase is easier to maintain, reducing technical debt over time.
-
-The service container is well-suited for applications of all sizes, providing structure and scalability, ensuring that as your project grows, dependency management remains effortless and effective.
-
-### Next Steps
-
-To further explore the capabilities of the Stone Service Container, consider:
-- Integrating it with a real-world project to experience its full power in managing complex dependency graphs.
-- Utilizing advanced features such as custom providers and lifecycle hooks for fine-grained control.
-
-With these tools at your disposal, you are ready to create clean, robust, and scalable applications by embracing the full potential of dependency injection and IoC patterns.
+The Stone Service Container simplifies dependency management in your applications, making them more modular, testable, and maintainable. It provides tools for binding instances, singletons, and factories, as well as auto and conditional binding. By leveraging Inversion of Control and dependency injection, the service container ensures efficient, flexible, and scalable management of dependencies, fitting projects of any size.
 
 ## API documentation
 
