@@ -1,3 +1,5 @@
+import del from 'rollup-plugin-delete'
+import { dts } from 'rollup-plugin-dts'
 import multi from '@rollup/plugin-multi-entry'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
@@ -26,4 +28,20 @@ export default Object.entries(inputs).map(([name, input]) => ({
     }),
     commonjs()
   ]
-}))
+})).concat([
+  {
+    input: 'dist/*.d.ts',
+    output: [{ format: 'es' , file: 'dist/index.d.ts' }],
+    plugins: [
+      multi(),
+      dts(),
+      del({
+        targets: [
+          'dist/**/*.d.ts',
+          '!dist/index.d.ts'
+        ],
+        hook: 'buildEnd'
+      })
+    ],
+  },
+])

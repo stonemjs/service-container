@@ -1,8 +1,8 @@
-[**Service container Documentation v0.0.0**](../../../README.md) • **Docs**
+[**Service Container Documentation v0.0.41**](../../../README.md) • **Docs**
 
 ***
 
-[Service container Documentation v0.0.0](../../../modules.md) / [models/ResolverBinding](../README.md) / ResolverBinding
+[Service Container Documentation v0.0.41](../../../modules.md) / [models/ResolverBinding](../README.md) / ResolverBinding
 
 # Class: `abstract` ResolverBinding\<V\>
 
@@ -57,7 +57,7 @@ ContainerError if the resolver is not a function.
 
 #### Defined in
 
-[models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/facb7eba71781c35c6df9764b1f17d5385f9ab10/src/models/ResolverBinding.ts#L28)
+[models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/ResolverBinding.ts#L28)
 
 ## Properties
 
@@ -72,7 +72,7 @@ and dependency resolution. It should return an instance of type `V`.
 
 #### Defined in
 
-[models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/facb7eba71781c35c6df9764b1f17d5385f9ab10/src/models/ResolverBinding.ts#L20)
+[models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/ResolverBinding.ts#L20)
 
 ***
 
@@ -90,7 +90,7 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 #### Defined in
 
-[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/facb7eba71781c35c6df9764b1f17d5385f9ab10/src/models/Binding.ts#L20)
+[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L20)
 
 ## Methods
 
@@ -112,7 +112,7 @@ A boolean indicating whether the value has been resolved.
 
 #### Defined in
 
-[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/facb7eba71781c35c6df9764b1f17d5385f9ab10/src/models/Binding.ts#L36)
+[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L36)
 
 ***
 
@@ -142,4 +142,4 @@ The resolved value of the binding.
 
 #### Defined in
 
-[models/Binding.ts:48](https://github.com/stonemjs/service-container/blob/facb7eba71781c35c6df9764b1f17d5385f9ab10/src/models/Binding.ts#L48)
+[models/Binding.ts:48](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L48)

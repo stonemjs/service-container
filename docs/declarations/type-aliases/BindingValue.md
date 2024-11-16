@@ -1,8 +1,8 @@
-[**Service container Documentation v0.0.0**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.41**](../../README.md) • **Docs**
 
 ***
 
-[Service container Documentation v0.0.0](../../modules.md) / [declarations](../README.md) / BindingValue
+[Service Container Documentation v0.0.41](../../modules.md) / [declarations](../README.md) / BindingValue
 
 # Type Alias: BindingValue
 
@@ -15,4 +15,4 @@ Unlike `BindingKey`, `BindingValue` represents the actual data or instance being
 
 ## Defined in
 
-[declarations.ts:48](https://github.com/stonemjs/service-container/blob/facb7eba71781c35c6df9764b1f17d5385f9ab10/src/declarations.ts#L48)
+[declarations.ts:48](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/declarations.ts#L48)
