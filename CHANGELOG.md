@@ -7,6 +7,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## Unreleased
 
 
+## [0.0.42](https://github.com/stonemjs/service-container/compare/v0.0.4...v0.0.42) (2024-11-16)
+
+
+### Miscellaneous Chores
+
+* add rollup plugin to bundle types ([0ff9b91](https://github.com/stonemjs/service-container/commit/0ff9b9142bca163f80869df46a66780942ea289c))
+
 ## [0.0.4](https://github.com/stonemjs/service-container/compare/v0.0.2...v0.0.4) (2024-11-14)
 
 
