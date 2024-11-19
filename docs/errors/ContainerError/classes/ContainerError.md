@@ -44,7 +44,7 @@ The error message or key related to the error.
 
 #### Defined in
 
-[errors/ContainerError.ts:55](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L55)
+[errors/ContainerError.ts:55](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L55)
 
 ## Properties
 
@@ -56,7 +56,7 @@ Error type indicating an alias conflict.
 
 #### Defined in
 
-[errors/ContainerError.ts:12](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L12)
+[errors/ContainerError.ts:12](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L12)
 
 ***
 
@@ -68,7 +68,7 @@ Error type indicating an attempt to alias an unbound value.
 
 #### Defined in
 
-[errors/ContainerError.ts:27](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L27)
+[errors/ContainerError.ts:27](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L27)
 
 ***
 
@@ -80,7 +80,7 @@ Error type indicating an error thrown by the resolver function.
 
 #### Defined in
 
-[errors/ContainerError.ts:37](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L37)
+[errors/ContainerError.ts:37](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L37)
 
 ***
 
@@ -92,7 +92,7 @@ Error type indicating a circular dependency.
 
 #### Defined in
 
-[errors/ContainerError.ts:42](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L42)
+[errors/ContainerError.ts:42](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L42)
 
 ***
 
@@ -104,7 +104,7 @@ Error type indicating that a value is not a service.
 
 #### Defined in
 
-[errors/ContainerError.ts:32](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L32)
+[errors/ContainerError.ts:32](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L32)
 
 ***
 
@@ -116,7 +116,7 @@ Error type indicating a resolution failure.
 
 #### Defined in
 
-[errors/ContainerError.ts:22](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L22)
+[errors/ContainerError.ts:22](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L22)
 
 ***
 
@@ -128,4 +128,4 @@ Error type indicating that the resolver is not a function.
 
 #### Defined in
 
-[errors/ContainerError.ts:17](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/errors/ContainerError.ts#L17)
+[errors/ContainerError.ts:17](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/errors/ContainerError.ts#L17)

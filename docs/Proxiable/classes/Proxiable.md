@@ -40,4 +40,4 @@ A new proxy object for this instance.
 
 #### Defined in
 
-[Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/Proxiable.ts#L16)
+[Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Proxiable.ts#L16)

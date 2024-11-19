@@ -12,11 +12,11 @@ describe('Instance', () => {
   })
 
   it('should store the value passed during instantiation', () => {
-    expect(instanceBinding.resolve(new Container())).toBe(instanceValue)
+    expect(instanceBinding.resolve(Container.create())).toBe(instanceValue)
   })
 
   it('should resolve the same value each time', () => {
-    const container = new Container()
+    const container = Container.create()
     const firstResolvedValue = instanceBinding.resolve(container)
     const secondResolvedValue = instanceBinding.resolve(container)
     expect(firstResolvedValue).toBe(secondResolvedValue)

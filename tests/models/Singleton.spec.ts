@@ -10,7 +10,7 @@ describe('Singleton', () => {
   let singleton: Singleton<BindingValue>
 
   beforeEach(() => {
-    container = new Container()
+    container = Container.create()
     resolverMock = vi.fn().mockReturnValue('resolvedValue')
     singleton = new Singleton(resolverMock)
   })

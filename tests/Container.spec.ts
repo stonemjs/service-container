@@ -5,7 +5,7 @@ describe('Container', () => {
   let container: Container
 
   beforeEach(() => {
-    container = new Container()
+    container = Container.create()
   })
 
   it('should bind and resolve an instance', () => {
@@ -91,32 +91,6 @@ describe('Container', () => {
     expect(container.isAlias('aliasKey')).toBe(false)
   })
 
-  it('should register services with metadata', () => {
-    /* eslint-disable-next-line @typescript-eslint/no-extraneous-class */
-    class TestService {
-      static $$metadata$$ = { service: { singleton: true, alias: 'testService' } }
-    }
-    /* eslint-disable-next-line @typescript-eslint/no-extraneous-class */
-    class TestService2 {
-      static $$metadata$$ = { service: { singleton: true } }
-    }
-
-    container.register([TestService, TestService2])
-
-    const instance = container.make(TestService)
-    const instance2 = container.make(TestService2)
-    expect(instance).toBeInstanceOf(TestService)
-    expect(container.make('testService')).toBe(instance)
-    expect(container.make(TestService2)).toBe(instance2)
-  })
-
-  it('should throw an error when register services without metadata', () => {
-    /* eslint-disable-next-line @typescript-eslint/no-extraneous-class */
-    class TestService {}
-
-    expect(() => container.register(TestService)).toThrow(ContainerError)
-  })
-
   it('should retrieve all bindings', () => {
     container.instance('key1', 'value1')
     container.instance('key2', 'value2')
@@ -138,27 +112,6 @@ describe('Container', () => {
     expect(aliases.get('alias2')).toBe('key1')
   })
 
-  it('should set class name as camelCase alias using asAlias', () => {
-    /* eslint-disable-next-line @typescript-eslint/no-extraneous-class */
-    class TestService {}
-    /* eslint-disable-next-line @typescript-eslint/no-extraneous-class */
-    class TestService2 { static $$metadata$$ = { name: 'myService' } }
-
-    container.autoBinding(TestService).asAlias(TestService)
-    container.autoBinding(TestService2).asAlias(TestService2)
-
-    expect(container.isAlias('myService')).toBe(true)
-    expect(container.isAlias('testService')).toBe(true)
-    expect(container.getAliasKey('myService')).toBe(TestService2)
-    expect(container.getAliasKey('testService')).toBe(TestService)
-  })
-
-  it('should throw an error if asAlias argument is not a class or a traditionnal function', () => {
-    container.alias = vi.fn()
-    container.asAlias(() => {})
-    expect(container.alias).not.toHaveBeenCalled()
-  })
-
   it('should bind a resolver function if not already bound using bindingIf', () => {
     const resolver1 = vi.fn(() => ({ value: 'initialValue' }))
     const resolver2 = vi.fn(() => ({ value: 'newValue' }))
@@ -177,7 +130,7 @@ describe('Container', () => {
     class TestService {}
     /* eslint-disable-next-line @typescript-eslint/no-extraneous-class */
     class TestService2 {}
-    container.autoBinding(TestService2).asAlias(TestService2)
+    container.autoBinding(TestService2, undefined, true, 'testService2')
 
     const instance = container.resolve(TestService, true)
 

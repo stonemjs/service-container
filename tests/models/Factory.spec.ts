@@ -10,7 +10,7 @@ describe('Factory', () => {
   let factory: Factory<BindingValue>
 
   beforeEach(() => {
-    container = new Container()
+    container = Container.create()
     resolverMock = vi.fn().mockReturnValue('resolvedValue')
     factory = new Factory(resolverMock)
   })

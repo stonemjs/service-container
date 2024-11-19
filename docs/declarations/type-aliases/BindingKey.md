@@ -30,4 +30,4 @@ const key5: BindingKey = { custom: 'objectKey' }; // Using an object as a key
 
 ## Defined in
 
-[declarations.ts:40](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/declarations.ts#L40)
+[declarations.ts:40](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/declarations.ts#L40)

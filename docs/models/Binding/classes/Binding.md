@@ -47,7 +47,7 @@ The value to be held by the binding.
 
 #### Defined in
 
-[models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L27)
+[models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Binding.ts#L27)
 
 ## Properties
 
@@ -61,7 +61,7 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 #### Defined in
 
-[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L20)
+[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Binding.ts#L20)
 
 ## Methods
 
@@ -79,7 +79,7 @@ A boolean indicating whether the value has been resolved.
 
 #### Defined in
 
-[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L36)
+[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Binding.ts#L36)
 
 ***
 
@@ -105,4 +105,4 @@ The resolved value of the binding.
 
 #### Defined in
 
-[models/Binding.ts:48](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/models/Binding.ts#L48)
+[models/Binding.ts:48](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Binding.ts#L48)

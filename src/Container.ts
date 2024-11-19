@@ -1,4 +1,3 @@
-import { lowerFirst } from 'lodash-es'
 import { Proxiable } from './Proxiable'
 import { Binding } from './models/Binding'
 import { Factory } from './models/Factory'
@@ -22,11 +21,20 @@ export class Container extends Proxiable {
   private readonly bindings: Map<BindingKey, Binding<BindingValue>>
 
   /**
+   * Create a Container.
+   *
+   * @returns A new Container instance.
+   */
+  static create (): Container {
+    return new this()
+  }
+
+  /**
    * Create a container.
    *
    * Initializes the container with empty alias and binding maps.
    */
-  constructor () {
+  protected constructor () {
     super({
       get: (target: Container, prop: PropertyKey, receiver: unknown) => {
         if (Reflect.has(target, prop)) {
@@ -98,21 +106,6 @@ export class Container extends Proxiable {
    */
   getAliasKey (alias: BindingKey): BindingKey | undefined {
     return this.aliases.get(alias as string)
-  }
-
-  /**
-   * Set class name as camelCase alias.
-   *
-   * Automatically assigns a camelCase alias to a given class based on its name or metadata.
-   *
-   * @param Class - The class to alias.
-   * @returns The container instance.
-   */
-  asAlias (Class: Function): this {
-    if (typeof Class !== 'function' || !Object.prototype.hasOwnProperty.call(Class, 'prototype')) {
-      return this
-    }
-    return this.alias(Class, lowerFirst((Class as any).$$metadata$$?.name ?? Class.name))
   }
 
   /**
@@ -275,25 +268,6 @@ export class Container extends Proxiable {
   clear (): this {
     this.aliases.clear()
     this.bindings.clear()
-    return this
-  }
-
-  /**
-   * Register services with zero configuration.
-   *
-   * @param classes - Classes representing the services to be registered in the container.
-   * @returns The container instance.
-   */
-  register (classes: Function | Function[]): this {
-    for (const Class of ([] as Function[]).concat(classes)) {
-      if ((Class as any).$$metadata$$?.service !== undefined) {
-        const { singleton = true, alias } = (Class as any).$$metadata$$.service
-        this.autoBinding(Class, Class, singleton, alias ?? [])
-      } else {
-        throw new ContainerError(ContainerError.NOT_A_SERVICE_TYPE, Class)
-      }
-    }
-
     return this
   }
 

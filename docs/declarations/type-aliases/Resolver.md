@@ -39,4 +39,4 @@ const myResolver: Resolver<number> = (container: Container) => {
 
 ## Defined in
 
-[declarations.ts:18](https://github.com/stonemjs/service-container/blob/7783da28757f6e31cf32b1e1a6dcef833c613a29/src/declarations.ts#L18)
+[declarations.ts:18](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/declarations.ts#L18)

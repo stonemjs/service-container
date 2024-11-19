@@ -46,7 +46,7 @@ The **Conventional Commits** format is structured as follows:
 ```
 
 - **`<type>`**: Specifies the type of change. Common types are `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
-- **`<scope>`**: (Optional) A short, descriptive word for what part of the code is affected (e.g., `auth`, `pipeline`).
+- **`<scope>`**: (Optional) A short, descriptive word for what part of the code is affected (e.g., `auth`, `service-container`).
 - **`<description>`**: A brief description of the change.
 - **`Body`**: (Optional) Provides more detailed information about the commit.
 - **`Footer`**: (Optional) Used to reference issues or indicate breaking changes.
@@ -56,7 +56,7 @@ The **Conventional Commits** format is structured as follows:
 The **type** field in a Conventional Commit message is what allows you to derive the next semantic version:
 
 - **`feat`**: A new feature. Increments the **MINOR** version (e.g., `1.2.0`).
-  - Example: `feat(pipeline): add async pipe handling support`
+  - Example: `feat(service-container): add async pipe handling support`
 
 - **`fix`**: A bug fix. Increments the **PATCH** version (e.g., `1.2.1`).
   - Example: `fix(api): resolve issue with null values in responses`
@@ -65,13 +65,13 @@ The **type** field in a Conventional Commit message is what allows you to derive
   - Example: `docs(readme): update installation instructions`
 
 - **`style`**: Changes related to code style (e.g., formatting, missing semicolons). No version increment.
-  - Example: `style(pipeline): reformat code according to ESLint rules`
+  - Example: `style(service-container): reformat code according to ESLint rules`
 
 - **`refactor`**: A code change that does not add a feature or fix a bug. No version increment.
   - Example: `refactor(auth): simplify token validation logic`
 
 - **`test`**: Changes related to testing (e.g., adding missing tests, refactoring tests). No version increment.
-  - Example: `test(pipeline): add unit tests for error handling`
+  - Example: `test(service-container): add unit tests for error handling`
 
 - **`chore`**: Maintenance tasks that do not affect the functionality of the code (e.g., updating dependencies, build-related changes). No version increment.
   - Example: `chore(deps): update lodash to version 4.17.21`
@@ -79,15 +79,15 @@ The **type** field in a Conventional Commit message is what allows you to derive
 - **`BREAKING CHANGE`**: Use this in the footer if the commit introduces a breaking API change, which increments the **MAJOR** version.
   - Example:
     ```
-    feat(pipeline): change pipe API to accept configuration object
+    feat(service-container): change pipe API to accept configuration object
 
-    BREAKING CHANGE: The pipeline now requires a configuration object instead of individual parameters.
+    BREAKING CHANGE: The service-container now requires a configuration object instead of individual parameters.
     ```
 
 ### Example Commit Messages
 1. **New Feature**:
    ```
-   feat(pipeline): add support for multiple output formats
+   feat(service-container): add support for multiple output formats
    ```
    This will trigger a **MINOR** version bump.
 
