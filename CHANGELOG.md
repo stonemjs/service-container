@@ -7,6 +7,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## Unreleased
 
 
+## [0.0.43](https://github.com/stonemjs/service-container/compare/v0.0.42...v0.0.43) (2024-11-19)
+
+
+### Miscellaneous Chores
+
+* remove register, asAlias API, add create factory method and make constructor private ([1cb7f6d](https://github.com/stonemjs/service-container/commit/1cb7f6dac6e15193d4bf42125eca5f5db5f771b5))
+
 ## [0.0.42](https://github.com/stonemjs/service-container/compare/v0.0.4...v0.0.42) (2024-11-16)
 
 
