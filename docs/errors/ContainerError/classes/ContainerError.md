@@ -1,10 +1,12 @@
-[**Service Container Documentation v0.0.43**](../../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../../../modules.md) / [errors/ContainerError](../README.md) / ContainerError
+[Service Container Documentation](../../../modules.md) / [errors/ContainerError](../README.md) / ContainerError
 
 # Class: ContainerError
+
+Defined in: [errors/ContainerError.ts:8](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L8)
 
 Class representing a ContainerError.
 
@@ -22,15 +24,21 @@ Mr. Stone <evensstone@gmail.com>
 
 > **new ContainerError**(`type`, `message`): [`ContainerError`](ContainerError.md)
 
+Defined in: [errors/ContainerError.ts:55](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L55)
+
 Create a ContainerError.
 
 #### Parameters
 
-• **type**: `string`
+##### type
+
+`string`
 
 The type of the error.
 
-• **message**: [`BindingKey`](../../../declarations/type-aliases/BindingKey.md)
+##### message
+
+[`BindingKey`](../../../declarations/type-aliases/BindingKey.md)
 
 The error message or key related to the error.
 
@@ -42,21 +50,15 @@ The error message or key related to the error.
 
 `Error.constructor`
 
-#### Defined in
-
-[errors/ContainerError.ts:55](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L55)
-
 ## Properties
 
 ### ALIAS\_TYPE
 
 > `readonly` `static` **ALIAS\_TYPE**: `"alias"` = `'alias'`
 
+Defined in: [errors/ContainerError.ts:12](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L12)
+
 Error type indicating an alias conflict.
-
-#### Defined in
-
-[errors/ContainerError.ts:12](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L12)
 
 ***
 
@@ -64,11 +66,9 @@ Error type indicating an alias conflict.
 
 > `readonly` `static` **ALIAS\_UNBOUND\_TYPE**: `"alias_unbound"` = `'alias_unbound'`
 
+Defined in: [errors/ContainerError.ts:27](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L27)
+
 Error type indicating an attempt to alias an unbound value.
-
-#### Defined in
-
-[errors/ContainerError.ts:27](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L27)
 
 ***
 
@@ -76,11 +76,9 @@ Error type indicating an attempt to alias an unbound value.
 
 > `readonly` `static` **CANNOT\_RESOLVE\_TYPE**: `"cannot_resolve"` = `'cannot_resolve'`
 
+Defined in: [errors/ContainerError.ts:37](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L37)
+
 Error type indicating an error thrown by the resolver function.
-
-#### Defined in
-
-[errors/ContainerError.ts:37](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L37)
 
 ***
 
@@ -88,11 +86,9 @@ Error type indicating an error thrown by the resolver function.
 
 > `readonly` `static` **CIRCULAR\_DEPENDENCY\_TYPE**: `"circular_dependency"` = `'circular_dependency'`
 
+Defined in: [errors/ContainerError.ts:42](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L42)
+
 Error type indicating a circular dependency.
-
-#### Defined in
-
-[errors/ContainerError.ts:42](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L42)
 
 ***
 
@@ -100,11 +96,9 @@ Error type indicating a circular dependency.
 
 > `readonly` `static` **NOT\_A\_SERVICE\_TYPE**: `"not_a_service"` = `'not_a_service'`
 
+Defined in: [errors/ContainerError.ts:32](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L32)
+
 Error type indicating that a value is not a service.
-
-#### Defined in
-
-[errors/ContainerError.ts:32](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L32)
 
 ***
 
@@ -112,11 +106,9 @@ Error type indicating that a value is not a service.
 
 > `readonly` `static` **RESOLUTION\_TYPE**: `"resolution"` = `'resolution'`
 
+Defined in: [errors/ContainerError.ts:22](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L22)
+
 Error type indicating a resolution failure.
-
-#### Defined in
-
-[errors/ContainerError.ts:22](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L22)
 
 ***
 
@@ -124,8 +116,6 @@ Error type indicating a resolution failure.
 
 > `readonly` `static` **RESOLVER\_TYPE**: `"resolver"` = `'resolver'`
 
+Defined in: [errors/ContainerError.ts:17](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/errors/ContainerError.ts#L17)
+
 Error type indicating that the resolver is not a function.
-
-#### Defined in
-
-[errors/ContainerError.ts:17](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/errors/ContainerError.ts#L17)

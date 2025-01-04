@@ -1,10 +1,12 @@
-[**Service Container Documentation v0.0.43**](../../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../../../modules.md) / [models/Binding](../README.md) / Binding
+[Service Container Documentation](../../../modules.md) / [models/Binding](../README.md) / Binding
 
 # Class: `abstract` Binding\<V\>
+
+Defined in: [models/Binding.ts:14](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L14)
 
 Abstract class representing a Binding.
 
@@ -33,11 +35,15 @@ The type of value that this binding holds.
 
 > **new Binding**\<`V`\>(`value`?): [`Binding`](Binding.md)\<`V`\>
 
+Defined in: [models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L27)
+
 Create a new instance of Binding.
 
 #### Parameters
 
-• **value?**: `V`
+##### value?
+
+`V`
 
 The value to be held by the binding.
 
@@ -45,29 +51,25 @@ The value to be held by the binding.
 
 [`Binding`](Binding.md)\<`V`\>
 
-#### Defined in
-
-[models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L27)
-
 ## Properties
 
 ### value?
 
 > `protected` `optional` **value**: `V`
 
+Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L20)
+
 The value held by the binding.
 
 This value is resolved at runtime, either directly or through a resolver function.
-
-#### Defined in
-
-[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L20)
 
 ## Methods
 
 ### isResolved()
 
 > `protected` **isResolved**(): `boolean`
+
+Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L36)
 
 Check if the value has been resolved.
 
@@ -77,15 +79,13 @@ Check if the value has been resolved.
 
 A boolean indicating whether the value has been resolved.
 
-#### Defined in
-
-[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L36)
-
 ***
 
 ### resolve()
 
 > `abstract` **resolve**(`container`): `undefined` \| `V`
+
+Defined in: [models/Binding.ts:48](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L48)
 
 Resolve and return the value of the binding.
 
@@ -93,7 +93,9 @@ This abstract method must be implemented by subclasses to provide specific resol
 
 #### Parameters
 
-• **container**: [`Container`](../../../Container/classes/Container.md)
+##### container
+
+[`Container`](../../../Container/classes/Container.md)
 
 The container to resolve dependencies from.
 
@@ -102,7 +104,3 @@ The container to resolve dependencies from.
 `undefined` \| `V`
 
 The resolved value of the binding.
-
-#### Defined in
-
-[models/Binding.ts:48](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L48)

@@ -1,13 +1,11 @@
-[**Service Container Documentation v0.0.43**](../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../modules.md) / Container
+[Service Container Documentation](../modules.md) / Container
 
 # Container
 
-## Index
-
-### Classes
+## Classes
 
 - [Container](classes/Container.md)

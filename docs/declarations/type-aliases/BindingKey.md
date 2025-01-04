@@ -1,12 +1,14 @@
-[**Service Container Documentation v0.0.43**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../../modules.md) / [declarations](../README.md) / BindingKey
+[Service Container Documentation](../../modules.md) / [declarations](../README.md) / BindingKey
 
 # Type Alias: BindingKey
 
 > **BindingKey**: `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
+
+Defined in: [declarations.ts:40](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/declarations.ts#L40)
 
 A union type representing the possible keys that can be used to bind values in the container.
 
@@ -27,7 +29,3 @@ const key3: BindingKey = Symbol('uniqueKey'); // Using a symbol for uniqueness
 const key4: BindingKey = MyServiceClass; // Using a function (constructor) as a key
 const key5: BindingKey = { custom: 'objectKey' }; // Using an object as a key
 ```
-
-## Defined in
-
-[declarations.ts:40](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/declarations.ts#L40)

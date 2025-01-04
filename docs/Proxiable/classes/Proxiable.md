@@ -1,10 +1,12 @@
-[**Service Container Documentation v0.0.43**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../../modules.md) / [Proxiable](../README.md) / Proxiable
+[Service Container Documentation](../../modules.md) / [Proxiable](../README.md) / Proxiable
 
 # Class: `abstract` Proxiable
+
+Defined in: [Proxiable.ts:9](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/Proxiable.ts#L9)
 
 Class representing a Proxiable.
 
@@ -24,11 +26,15 @@ Mr. Stone <evensstone@gmail.com>
 
 > **new Proxiable**(`handler`): [`Proxiable`](Proxiable.md)
 
+Defined in: [Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/Proxiable.ts#L16)
+
 Creates a Proxiable instance wrapped in a Proxy.
 
 #### Parameters
 
-• **handler**: `ProxyHandler`\<[`Proxiable`](Proxiable.md)\>
+##### handler
+
+`ProxyHandler`\<[`Proxiable`](Proxiable.md)\>
 
 A trap object for the proxy, which defines custom behavior for fundamental operations (e.g., property lookup, assignment, etc.).
 
@@ -37,7 +43,3 @@ A trap object for the proxy, which defines custom behavior for fundamental opera
 [`Proxiable`](Proxiable.md)
 
 A new proxy object for this instance.
-
-#### Defined in
-
-[Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Proxiable.ts#L16)

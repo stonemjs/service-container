@@ -1,14 +1,12 @@
-[**Service Container Documentation v0.0.43**](../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../modules.md) / declarations
+[Service Container Documentation](../modules.md) / declarations
 
 # declarations
 
-## Index
-
-### Type Aliases
+## Type Aliases
 
 - [BindingKey](type-aliases/BindingKey.md)
 - [BindingValue](type-aliases/BindingValue.md)

@@ -1,10 +1,12 @@
-[**Service Container Documentation v0.0.43**](../../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../../../modules.md) / [models/Instance](../README.md) / Instance
+[Service Container Documentation](../../../modules.md) / [models/Instance](../README.md) / Instance
 
 # Class: Instance\<V\>
+
+Defined in: [models/Instance.ts:14](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Instance.ts#L14)
 
 Class representing an Instance.
 
@@ -31,11 +33,15 @@ The type of value that this binding holds.
 
 > **new Instance**\<`V`\>(`value`?): [`Instance`](Instance.md)\<`V`\>
 
+Defined in: [models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L27)
+
 Create a new instance of Binding.
 
 #### Parameters
 
-• **value?**: `V`
+##### value?
+
+`V`
 
 The value to be held by the binding.
 
@@ -47,15 +53,13 @@ The value to be held by the binding.
 
 [`Binding`](../../Binding/classes/Binding.md).[`constructor`](../../Binding/classes/Binding.md#constructors)
 
-#### Defined in
-
-[models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L27)
-
 ## Properties
 
 ### value?
 
 > `protected` `optional` **value**: `V`
+
+Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L20)
 
 The value held by the binding.
 
@@ -63,17 +67,15 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 #### Inherited from
 
-[`Binding`](../../Binding/classes/Binding.md).[`value`](../../Binding/classes/Binding.md#value)
-
-#### Defined in
-
-[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L20)
+[`Binding`](../../Binding/classes/Binding.md).[`value`](../../Binding/classes/Binding.md#value-1)
 
 ## Methods
 
 ### isResolved()
 
 > `protected` **isResolved**(): `boolean`
+
+Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L36)
 
 Check if the value has been resolved.
 
@@ -87,21 +89,21 @@ A boolean indicating whether the value has been resolved.
 
 [`Binding`](../../Binding/classes/Binding.md).[`isResolved`](../../Binding/classes/Binding.md#isresolved)
 
-#### Defined in
-
-[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L36)
-
 ***
 
 ### resolve()
 
 > **resolve**(`_container`): `undefined` \| `V`
 
+Defined in: [models/Instance.ts:21](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Instance.ts#L21)
+
 Resolve and return the value of the binding.
 
 #### Parameters
 
-• **\_container**: [`Container`](../../../Container/classes/Container.md)
+##### \_container
+
+[`Container`](../../../Container/classes/Container.md)
 
 Container to resolve dependencies (not used in this implementation).
 
@@ -114,7 +116,3 @@ The resolved value of the binding.
 #### Overrides
 
 [`Binding`](../../Binding/classes/Binding.md).[`resolve`](../../Binding/classes/Binding.md#resolve)
-
-#### Defined in
-
-[models/Instance.ts:21](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Instance.ts#L21)

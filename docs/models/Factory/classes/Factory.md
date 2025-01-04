@@ -1,10 +1,12 @@
-[**Service Container Documentation v0.0.43**](../../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../../../modules.md) / [models/Factory](../README.md) / Factory
+[Service Container Documentation](../../../modules.md) / [models/Factory](../README.md) / Factory
 
 # Class: Factory\<V\>
+
+Defined in: [models/Factory.ts:15](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Factory.ts#L15)
 
 Class representing a Factory.
 
@@ -31,11 +33,15 @@ The type of value that this binding holds.
 
 > **new Factory**\<`V`\>(`resolver`): [`Factory`](Factory.md)\<`V`\>
 
+Defined in: [models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/ResolverBinding.ts#L28)
+
 Create a new instance of ResolverBinding.
 
 #### Parameters
 
-• **resolver**: [`Resolver`](../../../declarations/type-aliases/Resolver.md)\<`V`\>
+##### resolver
+
+[`Resolver`](../../../declarations/type-aliases/Resolver.md)\<`V`\>
 
 The resolver function to provide the binding value.
 
@@ -51,15 +57,13 @@ ContainerError if the resolver is not a function.
 
 [`ResolverBinding`](../../ResolverBinding/classes/ResolverBinding.md).[`constructor`](../../ResolverBinding/classes/ResolverBinding.md#constructors)
 
-#### Defined in
-
-[models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/ResolverBinding.ts#L28)
-
 ## Properties
 
 ### resolver
 
 > `protected` `readonly` **resolver**: [`Resolver`](../../../declarations/type-aliases/Resolver.md)\<`V`\>
+
+Defined in: [models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/ResolverBinding.ts#L20)
 
 The resolver function used to provide the binding value.
 
@@ -68,17 +72,15 @@ and dependency resolution. It should return an instance of type `V`.
 
 #### Inherited from
 
-[`ResolverBinding`](../../ResolverBinding/classes/ResolverBinding.md).[`resolver`](../../ResolverBinding/classes/ResolverBinding.md#resolver)
-
-#### Defined in
-
-[models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/ResolverBinding.ts#L20)
+[`ResolverBinding`](../../ResolverBinding/classes/ResolverBinding.md).[`resolver`](../../ResolverBinding/classes/ResolverBinding.md#resolver-1)
 
 ***
 
 ### value?
 
 > `protected` `optional` **value**: `V`
+
+Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L20)
 
 The value held by the binding.
 
@@ -88,15 +90,13 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 [`ResolverBinding`](../../ResolverBinding/classes/ResolverBinding.md).[`value`](../../ResolverBinding/classes/ResolverBinding.md#value)
 
-#### Defined in
-
-[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L20)
-
 ## Methods
 
 ### isResolved()
 
 > `protected` **isResolved**(): `boolean`
+
+Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Binding.ts#L36)
 
 Check if the value has been resolved.
 
@@ -110,15 +110,13 @@ A boolean indicating whether the value has been resolved.
 
 [`ResolverBinding`](../../ResolverBinding/classes/ResolverBinding.md).[`isResolved`](../../ResolverBinding/classes/ResolverBinding.md#isresolved)
 
-#### Defined in
-
-[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L36)
-
 ***
 
 ### resolve()
 
 > **resolve**(`container`): `V`
+
+Defined in: [models/Factory.ts:26](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/models/Factory.ts#L26)
 
 Resolve and return the value of the binding.
 
@@ -127,7 +125,9 @@ This is intended for cases where a fresh instance is required for each resolutio
 
 #### Parameters
 
-• **container**: [`Container`](../../../Container/classes/Container.md)
+##### container
+
+[`Container`](../../../Container/classes/Container.md)
 
 The container to resolve dependencies from.
 
@@ -144,7 +144,3 @@ ContainerError if the value cannot be resolved.
 #### Overrides
 
 [`ResolverBinding`](../../ResolverBinding/classes/ResolverBinding.md).[`resolve`](../../ResolverBinding/classes/ResolverBinding.md#resolve)
-
-#### Defined in
-
-[models/Factory.ts:26](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Factory.ts#L26)

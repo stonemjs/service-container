@@ -1,4 +1,4 @@
-**Service Container Documentation v0.0.43** • [**Docs**](modules.md)
+**Service Container Documentation v0.0.43**
 
 ***
 

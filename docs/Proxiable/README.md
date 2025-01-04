@@ -1,13 +1,11 @@
-[**Service Container Documentation v0.0.43**](../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../README.md)
 
 ***
 
-[Service Container Documentation v0.0.43](../modules.md) / Proxiable
+[Service Container Documentation](../modules.md) / Proxiable
 
 # Proxiable
 
-## Index
-
-### Classes
+## Classes
 
 - [Proxiable](classes/Proxiable.md)
