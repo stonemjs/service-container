@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.41**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../README.md) • **Docs**
 
 ***
 
-[Service Container Documentation v0.0.41](../../modules.md) / [Container](../README.md) / Container
+[Service Container Documentation v0.0.43](../../modules.md) / [Container](../README.md) / Container
 
 # Class: Container
 
@@ -40,7 +40,7 @@ Initializes the container with empty alias and binding maps.
 
 #### Defined in
 
-[Container.ts:37](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L37)
+[Container.ts:37](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L37)
 
 ## Methods
 
@@ -70,7 +70,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:79](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L79)
+[Container.ts:79](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L79)
 
 ***
 
@@ -110,7 +110,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:283](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L283)
+[Container.ts:284](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L284)
 
 ***
 
@@ -142,7 +142,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:172](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L172)
+[Container.ts:172](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L172)
 
 ***
 
@@ -174,7 +174,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:184](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L184)
+[Container.ts:184](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L184)
 
 ***
 
@@ -198,7 +198,7 @@ True if the key is bound, false otherwise.
 
 #### Defined in
 
-[Container.ts:249](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L249)
+[Container.ts:250](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L250)
 
 ***
 
@@ -216,13 +216,13 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:268](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L268)
+[Container.ts:269](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L269)
 
 ***
 
 ### factory()
 
-> **factory**\<`V`\>(`key`): () => `undefined` \| `V`
+> **factory**\<`V`\>(`key`): () => `V`
 
 Resolve a value from the container by its key and return it in a factory function.
 
@@ -244,11 +244,11 @@ A factory function that returns the resolved value.
 
 ##### Returns
 
-`undefined` \| `V`
+`V`
 
 #### Defined in
 
-[Container.ts:239](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L239)
+[Container.ts:240](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L240)
 
 ***
 
@@ -266,7 +266,7 @@ A map of all aliases registered in the container.
 
 #### Defined in
 
-[Container.ts:66](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L66)
+[Container.ts:66](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L66)
 
 ***
 
@@ -290,7 +290,7 @@ The binding key associated with the alias, or undefined if not found.
 
 #### Defined in
 
-[Container.ts:107](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L107)
+[Container.ts:107](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L107)
 
 ***
 
@@ -308,7 +308,7 @@ A map of all bindings registered in the container.
 
 #### Defined in
 
-[Container.ts:57](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L57)
+[Container.ts:57](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L57)
 
 ***
 
@@ -332,7 +332,7 @@ True if the key is bound, false otherwise.
 
 #### Defined in
 
-[Container.ts:259](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L259)
+[Container.ts:260](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L260)
 
 ***
 
@@ -360,7 +360,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:118](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L118)
+[Container.ts:118](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L118)
 
 ***
 
@@ -388,7 +388,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:130](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L130)
+[Container.ts:130](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L130)
 
 ***
 
@@ -412,13 +412,13 @@ True if the alias exists, false otherwise.
 
 #### Defined in
 
-[Container.ts:97](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L97)
+[Container.ts:97](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L97)
 
 ***
 
 ### make()
 
-> **make**\<`V`\>(`key`): `undefined` \| `V`
+> **make**\<`V`\>(`key`): `V`
 
 Resolve a registered value from the container by its key.
 
@@ -434,7 +434,7 @@ The key to resolve.
 
 #### Returns
 
-`undefined` \| `V`
+`V`
 
 The resolved value.
 
@@ -444,13 +444,13 @@ ContainerError if the key cannot be resolved.
 
 #### Defined in
 
-[Container.ts:198](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L198)
+[Container.ts:198](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L198)
 
 ***
 
 ### resolve()
 
-> **resolve**\<`V`\>(`key`, `singleton`): `undefined` \| `V`
+> **resolve**\<`V`\>(`key`, `singleton`): `V`
 
 Resolve a value from the container by its key, binding it if necessary.
 
@@ -470,13 +470,13 @@ Whether to bind as a singleton if not already bound.
 
 #### Returns
 
-`undefined` \| `V`
+`V`
 
 The resolved value.
 
 #### Defined in
 
-[Container.ts:225](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L225)
+[Container.ts:226](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L226)
 
 ***
 
@@ -510,7 +510,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:146](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L146)
+[Container.ts:146](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L146)
 
 ***
 
@@ -542,7 +542,7 @@ The container instance.
 
 #### Defined in
 
-[Container.ts:158](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L158)
+[Container.ts:158](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L158)
 
 ***
 
@@ -560,4 +560,4 @@ A new Container instance.
 
 #### Defined in
 
-[Container.ts:28](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Container.ts#L28)
+[Container.ts:28](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Container.ts#L28)

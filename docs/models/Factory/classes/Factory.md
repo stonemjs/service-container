@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.41**](../../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../../README.md) • **Docs**
 
 ***
 
-[Service Container Documentation v0.0.41](../../../modules.md) / [models/Factory](../README.md) / Factory
+[Service Container Documentation v0.0.43](../../../modules.md) / [models/Factory](../README.md) / Factory
 
 # Class: Factory\<V\>
 
@@ -53,7 +53,7 @@ ContainerError if the resolver is not a function.
 
 #### Defined in
 
-[models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/ResolverBinding.ts#L28)
+[models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/ResolverBinding.ts#L28)
 
 ## Properties
 
@@ -72,7 +72,7 @@ and dependency resolution. It should return an instance of type `V`.
 
 #### Defined in
 
-[models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/ResolverBinding.ts#L20)
+[models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/ResolverBinding.ts#L20)
 
 ***
 
@@ -90,7 +90,7 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 #### Defined in
 
-[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Binding.ts#L20)
+[models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L20)
 
 ## Methods
 
@@ -112,7 +112,7 @@ A boolean indicating whether the value has been resolved.
 
 #### Defined in
 
-[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Binding.ts#L36)
+[models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Binding.ts#L36)
 
 ***
 
@@ -147,4 +147,4 @@ ContainerError if the value cannot be resolved.
 
 #### Defined in
 
-[models/Factory.ts:26](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/models/Factory.ts#L26)
+[models/Factory.ts:26](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/models/Factory.ts#L26)

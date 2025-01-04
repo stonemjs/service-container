@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.41**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../README.md) • **Docs**
 
 ***
 
-[Service Container Documentation v0.0.41](../../modules.md) / [declarations](../README.md) / Resolver
+[Service Container Documentation v0.0.43](../../modules.md) / [declarations](../README.md) / Resolver
 
 # Type Alias: Resolver()\<V\>
 
@@ -39,4 +39,4 @@ const myResolver: Resolver<number> = (container: Container) => {
 
 ## Defined in
 
-[declarations.ts:18](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/declarations.ts#L18)
+[declarations.ts:18](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/declarations.ts#L18)

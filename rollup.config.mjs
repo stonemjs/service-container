@@ -37,6 +37,7 @@ export default Object.entries(inputs).map(([name, input]) => ({
       dts(),
       del({
         targets: [
+          'dist/**/',
           'dist/**/*.d.ts',
           '!dist/index.d.ts'
         ],

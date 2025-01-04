@@ -195,7 +195,7 @@ export class Container extends Proxiable {
    * @returns The resolved value.
    * @throws ContainerError if the key cannot be resolved.
    */
-  make<V extends BindingValue>(key: BindingKey): V | undefined {
+  make<V extends BindingValue>(key: BindingKey): V {
     key = this.getAliasKey(key) ?? key
 
     if (this.resolvingKeys.has(key)) {
@@ -205,8 +205,9 @@ export class Container extends Proxiable {
     this.resolvingKeys.add(key)
 
     try {
-      if (this.bindings.has(key)) {
-        return this.bindings.get(key)?.resolve(this) as V
+      const binding = this.bindings.get(key)
+      if (binding !== undefined) {
+        return binding.resolve(this) as V
       }
     } finally {
       this.resolvingKeys.delete(key)
@@ -222,7 +223,7 @@ export class Container extends Proxiable {
    * @param singleton - Whether to bind as a singleton if not already bound.
    * @returns The resolved value.
    */
-  resolve<V extends BindingValue>(key: BindingKey, singleton: boolean = false): V | undefined {
+  resolve<V extends BindingValue>(key: BindingKey, singleton: boolean = false): V {
     if (this.has(key)) {
       return this.make(key)
     } else {
@@ -236,7 +237,7 @@ export class Container extends Proxiable {
    * @param key - The key to resolve.
    * @returns A factory function that returns the resolved value.
    */
-  factory<V extends BindingValue>(key: BindingKey): () => V | undefined {
+  factory<V extends BindingValue>(key: BindingKey): () => V {
     return () => this.make(key)
   }
 

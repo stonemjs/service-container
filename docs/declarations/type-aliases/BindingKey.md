@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.41**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../README.md) • **Docs**
 
 ***
 
-[Service Container Documentation v0.0.41](../../modules.md) / [declarations](../README.md) / BindingKey
+[Service Container Documentation v0.0.43](../../modules.md) / [declarations](../README.md) / BindingKey
 
 # Type Alias: BindingKey
 
@@ -30,4 +30,4 @@ const key5: BindingKey = { custom: 'objectKey' }; // Using an object as a key
 
 ## Defined in
 
-[declarations.ts:40](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/declarations.ts#L40)
+[declarations.ts:40](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/declarations.ts#L40)

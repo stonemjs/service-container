@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.41**](../../README.md) • **Docs**
+[**Service Container Documentation v0.0.43**](../../README.md) • **Docs**
 
 ***
 
-[Service Container Documentation v0.0.41](../../modules.md) / [Proxiable](../README.md) / Proxiable
+[Service Container Documentation v0.0.43](../../modules.md) / [Proxiable](../README.md) / Proxiable
 
 # Class: `abstract` Proxiable
 
@@ -40,4 +40,4 @@ A new proxy object for this instance.
 
 #### Defined in
 
-[Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/0ff9b9142bca163f80869df46a66780942ea289c/src/Proxiable.ts#L16)
+[Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/f563ebfbcf5ea11d75901c138f530235ce2f4c94/src/Proxiable.ts#L16)
