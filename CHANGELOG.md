@@ -5,6 +5,13 @@ All notable changes to the "Stone.js Service container" extension will be docume
 ## Unreleased
 
 
+## [0.0.44](https://github.com/stonemjs/service-container/compare/v0.0.43...v0.0.44) (2025-01-04)
+
+
+### Miscellaneous Chores
+
+* update container's make method return type ([020e91c](https://github.com/stonemjs/service-container/commit/020e91c7b464b5fa785c869702b6bef84b206d51))
+
 ## [0.0.43](https://github.com/stonemjs/service-container/compare/v0.0.42...v0.0.43) (2024-11-19)
 
 
