@@ -1,6 +1,6 @@
 # Stone.js: Service Container
 
-[![npm](https://img.shields.io/npm/l/@stone-js/service-container)](https://opensource.org/licenses/Apache-2.0)
+[![npm](https://img.shields.io/npm/l/@stone-js/service-container)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/v/@stone-js/service-container)](https://www.npmjs.com/package/@stone-js/service-container)
 [![npm](https://img.shields.io/npm/dm/@stone-js/service-container)](https://www.npmjs.com/package/@stone-js/service-container)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025)
