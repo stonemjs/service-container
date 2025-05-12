@@ -30,12 +30,12 @@ export class Container extends Proxiable {
   }
 
   /**
-   * Create a container.
+   * Create a ProxyHandler for the container.
    *
-   * Initializes the container with empty alias and binding maps.
+   * @returns A new ProxyHandler instance.
    */
-  protected constructor () {
-    super({
+  private static Proxyhandler (): ProxyHandler<Container> {
+    return {
       get: (target: Container, prop: PropertyKey, receiver: unknown) => {
         if (Reflect.has(target, prop)) {
           return Reflect.get(target, prop, receiver)
@@ -43,8 +43,16 @@ export class Container extends Proxiable {
           return target.make(prop)
         }
       }
-    })
+    }
+  }
 
+  /**
+   * Create a container.
+   *
+   * Initializes the container with empty alias and binding maps.
+   */
+  protected constructor () {
+    super(Container.Proxyhandler())
     this.aliases = new Map()
     this.bindings = new Map()
   }
@@ -207,7 +215,7 @@ export class Container extends Proxiable {
     try {
       const binding = this.bindings.get(key)
       if (binding !== undefined) {
-        return binding.resolve(this) as V
+        return binding.resolve(new Proxy(this, Container.Proxyhandler())) as V
       }
     } finally {
       this.resolvingKeys.delete(key)

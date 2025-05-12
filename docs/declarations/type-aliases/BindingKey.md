@@ -1,4 +1,4 @@
-[**Service Container Documentation v0.0.43**](../../README.md)
+[**Service Container Documentation v0.0.44**](../../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **BindingKey**: `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
 
-Defined in: [declarations.ts:40](https://github.com/stonemjs/service-container/blob/020e91c7b464b5fa785c869702b6bef84b206d51/src/declarations.ts#L40)
+Defined in: [declarations.ts:40](https://github.com/stonemjs/service-container/blob/249b060f7936ebb0ea1e26fa167dc5f8fc0b9bc3/src/declarations.ts#L40)
 
 A union type representing the possible keys that can be used to bind values in the container.
 
