@@ -7,7 +7,7 @@
 [![Publish Package to npmjs](https://github.com/stonemjs/service-container/actions/workflows/release.yml/badge.svg)](https://github.com/stonemjs/service-container/actions/workflows/release.yml)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-IoC Service Container with proposal decorator, proxy resolver and destructuring injection provides a very simple, centralized container that stores and resolves libraries, objects, and values to better organize code, manage dependencies, and enhance testability.
+IoC Service Container with proxy resolver and destructuring injection provides a very simple, centralized container that stores and resolves libraries, objects, and values to better organize code, manage dependencies, and enhance testability.
 
 ---
 
