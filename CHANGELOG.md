@@ -5,6 +5,13 @@ All notable changes to the "Stone.js Service container" extension will be docume
 ## Unreleased
 
 
+## [0.1.0](https://github.com/stonemjs/service-container/compare/v0.0.44...v0.1.0) (2025-05-12)
+
+
+### Features
+
+* fix proxy issue and change the license to MIT ([0a34b2a](https://github.com/stonemjs/service-container/commit/0a34b2a7bbc717ca808ccc9b15f0b1794b6d1d46))
+
 ## [0.0.44](https://github.com/stonemjs/service-container/compare/v0.0.43...v0.0.44) (2025-01-04)
 
 
