@@ -8,7 +8,7 @@
 
 > **Resolver**\<`V`\>: (`container`) => `V`
 
-Defined in: [declarations.ts:18](https://github.com/stonemjs/service-container/blob/f185bc5ddd118b5cfccf9a2fc8d4c58e494e2e00/src/declarations.ts#L18)
+Defined in: [declarations.ts:18](https://github.com/stonemjs/service-container/blob/249b060f7936ebb0ea1e26fa167dc5f8fc0b9bc3/src/declarations.ts#L18)
 
 A resolver function that takes a container and returns a value of type V.
 

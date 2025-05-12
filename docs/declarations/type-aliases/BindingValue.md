@@ -8,7 +8,7 @@
 
 > **BindingValue**: `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
 
-Defined in: [declarations.ts:48](https://github.com/stonemjs/service-container/blob/f185bc5ddd118b5cfccf9a2fc8d4c58e494e2e00/src/declarations.ts#L48)
+Defined in: [declarations.ts:48](https://github.com/stonemjs/service-container/blob/249b060f7936ebb0ea1e26fa167dc5f8fc0b9bc3/src/declarations.ts#L48)
 
 A union type representing the possible values that can be bound in the container.
 
