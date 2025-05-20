@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.44**](../README.md)
+[**Service Container Documentation**](../README.md)
 
 ***
 
-[Service Container Documentation](../modules.md) / Container
+[Service Container Documentation](../README.md) / Container
 
 # Container
 

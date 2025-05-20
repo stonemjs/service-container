@@ -1,8 +1,8 @@
-[**Service Container Documentation v0.0.44**](../../README.md)
+[**Service Container Documentation**](../../README.md)
 
 ***
 
-[Service Container Documentation](../../modules.md) / models/Singleton
+[Service Container Documentation](../../README.md) / models/Singleton
 
 # models/Singleton
 
