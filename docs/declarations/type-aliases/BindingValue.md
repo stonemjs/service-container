@@ -1,14 +1,14 @@
-[**Service Container Documentation v0.0.44**](../../README.md)
+[**Service Container Documentation**](../../README.md)
 
 ***
 
-[Service Container Documentation](../../modules.md) / [declarations](../README.md) / BindingValue
+[Service Container Documentation](../../README.md) / [declarations](../README.md) / BindingValue
 
 # Type Alias: BindingValue
 
-> **BindingValue**: `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
+> **BindingValue** = `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
 
-Defined in: [declarations.ts:48](https://github.com/stonemjs/service-container/blob/249b060f7936ebb0ea1e26fa167dc5f8fc0b9bc3/src/declarations.ts#L48)
+Defined in: [declarations.ts:48](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/declarations.ts#L48)
 
 A union type representing the possible values that can be bound in the container.
 

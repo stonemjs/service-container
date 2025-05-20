@@ -1,20 +1,22 @@
-[**Service Container Documentation v0.0.44**](../../README.md)
+[**Service Container Documentation**](../../README.md)
 
 ***
 
-[Service Container Documentation](../../modules.md) / [declarations](../README.md) / Resolver
+[Service Container Documentation](../../README.md) / [declarations](../README.md) / Resolver
 
 # Type Alias: Resolver()\<V\>
 
-> **Resolver**\<`V`\>: (`container`) => `V`
+> **Resolver**\<`V`\> = (`container`) => `V`
 
-Defined in: [declarations.ts:18](https://github.com/stonemjs/service-container/blob/249b060f7936ebb0ea1e26fa167dc5f8fc0b9bc3/src/declarations.ts#L18)
+Defined in: [declarations.ts:18](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/declarations.ts#L18)
 
 A resolver function that takes a container and returns a value of type V.
 
 ## Type Parameters
 
-• **V**
+### V
+
+`V`
 
 The type of value that the resolver returns.
 
