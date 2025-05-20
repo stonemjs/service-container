@@ -6,8 +6,7 @@
 ![Maintenance](https://img.shields.io/maintenance/yes/2025)
 [![Build Status](https://github.com/stonemjs/service-container/actions/workflows/main.yml/badge.svg)](https://github.com/stonemjs/service-container/actions/workflows/main.yml)
 [![Publish Package to npmjs](https://github.com/stonemjs/service-container/actions/workflows/release.yml/badge.svg)](https://github.com/stonemjs/service-container/actions/workflows/release.yml)
-[![Codecov Coverage](https://codecov.io/gh/stonemjs/service-container/branch/main/graph/badge.svg)](https://codecov.io/gh/stonemjs/service-container)
-
+[![codecov](https://codecov.io/gh/stonemjs/service-container/graph/badge.svg?token=5MKS9179YL)](https://codecov.io/gh/stonemjs/service-container)
 [![CodeQL](https://github.com/stonemjs/service-container/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/stonemjs/service-container/security/code-scanning)
 [![Dependabot Status](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/stonemjs/service-container/network/updates)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
