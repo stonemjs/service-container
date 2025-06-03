@@ -6,7 +6,7 @@
 
 # Class: Instance\<V\>
 
-Defined in: [models/Instance.ts:14](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Instance.ts#L14)
+Defined in: [models/Instance.ts:14](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Instance.ts#L14)
 
 Class representing an Instance.
 
@@ -35,7 +35,7 @@ The type of value that this binding holds.
 
 > **new Instance**\<`V`\>(`value?`): `Instance`\<`V`\>
 
-Defined in: [models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Binding.ts#L27)
+Defined in: [models/Binding.ts:27](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L27)
 
 Create a new instance of Binding.
 
@@ -61,7 +61,7 @@ The value to be held by the binding.
 
 > `protected` `optional` **value**: `V`
 
-Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Binding.ts#L20)
+Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L20)
 
 The value held by the binding.
 
@@ -77,7 +77,7 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 > `protected` **isResolved**(): `boolean`
 
-Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Binding.ts#L36)
+Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L36)
 
 Check if the value has been resolved.
 
@@ -97,7 +97,7 @@ A boolean indicating whether the value has been resolved.
 
 > **resolve**(`_container`): `undefined` \| `V`
 
-Defined in: [models/Instance.ts:21](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Instance.ts#L21)
+Defined in: [models/Instance.ts:21](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Instance.ts#L21)
 
 Resolve and return the value of the binding.
 

@@ -6,7 +6,7 @@
 
 # Class: `abstract` Proxiable
 
-Defined in: [Proxiable.ts:9](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Proxiable.ts#L9)
+Defined in: [Proxiable.ts:9](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Proxiable.ts#L9)
 
 Class representing a Proxiable.
 
@@ -26,7 +26,7 @@ Mr. Stone <evensstone@gmail.com>
 
 > **new Proxiable**(`handler`): `Proxiable`
 
-Defined in: [Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Proxiable.ts#L16)
+Defined in: [Proxiable.ts:16](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Proxiable.ts#L16)
 
 Creates a Proxiable instance wrapped in a Proxy.
 

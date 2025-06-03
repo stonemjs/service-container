@@ -6,7 +6,7 @@
 
 # Class: Container
 
-Defined in: [Container.ts:18](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L18)
+Defined in: [Container.ts:18](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L18)
 
 Class representing a Container.
 
@@ -28,7 +28,7 @@ Mr. Stone <evensstone@gmail.com>
 
 > `protected` **new Container**(): `Container`
 
-Defined in: [Container.ts:54](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L54)
+Defined in: [Container.ts:54](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L54)
 
 Create a container.
 
@@ -48,7 +48,7 @@ Initializes the container with empty alias and binding maps.
 
 > **alias**(`key`, `aliases`): `this`
 
-Defined in: [Container.ts:87](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L87)
+Defined in: [Container.ts:87](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L87)
 
 Set a binding as alias.
 
@@ -80,7 +80,7 @@ The container instance.
 
 > **autoBinding**\<`V`\>(`name`, `item?`, `singleton?`, `alias?`): `this`
 
-Defined in: [Container.ts:292](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L292)
+Defined in: [Container.ts:292](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L292)
 
 AutoBind value to the service container.
 
@@ -128,7 +128,7 @@ The container instance.
 
 > **binding**\<`V`\>(`key`, `resolver`): `this`
 
-Defined in: [Container.ts:180](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L180)
+Defined in: [Container.ts:180](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L180)
 
 Bind a resolver function into the container under the provided key, returning a new instance each time.
 
@@ -164,7 +164,7 @@ The container instance.
 
 > **bindingIf**\<`V`\>(`key`, `resolver`): `this`
 
-Defined in: [Container.ts:192](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L192)
+Defined in: [Container.ts:192](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L192)
 
 Bind a resolver function into the container under the provided key, returning a new instance each time if not already bound.
 
@@ -200,7 +200,7 @@ The container instance.
 
 > **bound**(`key`): `boolean`
 
-Defined in: [Container.ts:258](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L258)
+Defined in: [Container.ts:258](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L258)
 
 Check if a value is already bound in the container by its key.
 
@@ -224,7 +224,7 @@ True if the key is bound, false otherwise.
 
 > **clear**(): `this`
 
-Defined in: [Container.ts:277](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L277)
+Defined in: [Container.ts:277](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L277)
 
 Reset the container so that all bindings are removed.
 
@@ -240,7 +240,7 @@ The container instance.
 
 > **factory**\<`V`\>(`key`): () => `V`
 
-Defined in: [Container.ts:248](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L248)
+Defined in: [Container.ts:248](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L248)
 
 Resolve a value from the container by its key and return it in a factory function.
 
@@ -274,7 +274,7 @@ A factory function that returns the resolved value.
 
 > **getAliases**(): `Map`\<`string`, [`BindingKey`](../../declarations/type-aliases/BindingKey.md)\>
 
-Defined in: [Container.ts:74](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L74)
+Defined in: [Container.ts:74](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L74)
 
 Retrieve the value of the aliases property.
 
@@ -290,7 +290,7 @@ A map of all aliases registered in the container.
 
 > **getAliasKey**(`alias`): `undefined` \| [`BindingKey`](../../declarations/type-aliases/BindingKey.md)
 
-Defined in: [Container.ts:115](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L115)
+Defined in: [Container.ts:115](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L115)
 
 Get a binding key by its alias.
 
@@ -314,7 +314,7 @@ The binding key associated with the alias, or undefined if not found.
 
 > **getBindings**(): `Map`\<[`BindingKey`](../../declarations/type-aliases/BindingKey.md), [`Binding`](../../models/Binding/classes/Binding.md)\<[`BindingValue`](../../declarations/type-aliases/BindingValue.md)\>\>
 
-Defined in: [Container.ts:65](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L65)
+Defined in: [Container.ts:65](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L65)
 
 Retrieve the value of the bindings property.
 
@@ -330,7 +330,7 @@ A map of all bindings registered in the container.
 
 > **has**(`key`): `boolean`
 
-Defined in: [Container.ts:268](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L268)
+Defined in: [Container.ts:268](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L268)
 
 Check if a value is already bound in the container by its key.
 
@@ -354,7 +354,7 @@ True if the key is bound, false otherwise.
 
 > **instance**(`key`, `value`): `this`
 
-Defined in: [Container.ts:126](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L126)
+Defined in: [Container.ts:126](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L126)
 
 Bind a single instance or value into the container under the provided key.
 
@@ -384,7 +384,7 @@ The container instance.
 
 > **instanceIf**(`key`, `value`): `this`
 
-Defined in: [Container.ts:138](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L138)
+Defined in: [Container.ts:138](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L138)
 
 Bind a single instance or value into the container under the provided key if not already bound.
 
@@ -414,7 +414,7 @@ The container instance.
 
 > **isAlias**(`alias`): `boolean`
 
-Defined in: [Container.ts:105](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L105)
+Defined in: [Container.ts:105](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L105)
 
 Check if an alias exists in the container.
 
@@ -438,7 +438,7 @@ True if the alias exists, false otherwise.
 
 > **make**\<`V`\>(`key`): `V`
 
-Defined in: [Container.ts:206](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L206)
+Defined in: [Container.ts:206](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L206)
 
 Resolve a registered value from the container by its key.
 
@@ -472,7 +472,7 @@ ContainerError if the key cannot be resolved.
 
 > **resolve**\<`V`\>(`key`, `singleton`): `V`
 
-Defined in: [Container.ts:234](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L234)
+Defined in: [Container.ts:234](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L234)
 
 Resolve a value from the container by its key, binding it if necessary.
 
@@ -508,7 +508,7 @@ The resolved value.
 
 > **singleton**\<`V`\>(`key`, `resolver`): `this`
 
-Defined in: [Container.ts:154](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L154)
+Defined in: [Container.ts:154](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L154)
 
 Bind a resolver function into the container under the provided key as a singleton.
 
@@ -546,7 +546,7 @@ The container instance.
 
 > **singletonIf**\<`V`\>(`key`, `resolver`): `this`
 
-Defined in: [Container.ts:166](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L166)
+Defined in: [Container.ts:166](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L166)
 
 Bind a resolver function into the container under the provided key as a singleton if not already bound.
 
@@ -582,7 +582,7 @@ The container instance.
 
 > `static` **create**(): `Container`
 
-Defined in: [Container.ts:28](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/Container.ts#L28)
+Defined in: [Container.ts:28](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/Container.ts#L28)
 
 Create a Container.
 
