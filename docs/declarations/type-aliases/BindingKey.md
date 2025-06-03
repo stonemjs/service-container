@@ -8,7 +8,7 @@
 
 > **BindingKey** = `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
 
-Defined in: [declarations.ts:40](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/declarations.ts#L40)
+Defined in: [declarations.ts:40](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/declarations.ts#L40)
 
 A union type representing the possible keys that can be used to bind values in the container.
 

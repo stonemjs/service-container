@@ -6,7 +6,7 @@
 
 # Class: Singleton\<V\>
 
-Defined in: [models/Singleton.ts:15](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Singleton.ts#L15)
+Defined in: [models/Singleton.ts:15](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Singleton.ts#L15)
 
 Class representing a Singleton.
 
@@ -35,7 +35,7 @@ The type of value that this binding holds.
 
 > **new Singleton**\<`V`\>(`resolver`): `Singleton`\<`V`\>
 
-Defined in: [models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/ResolverBinding.ts#L28)
+Defined in: [models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/ResolverBinding.ts#L28)
 
 Create a new instance of ResolverBinding.
 
@@ -65,7 +65,7 @@ ContainerError if the resolver is not a function.
 
 > `protected` `readonly` **resolver**: [`Resolver`](../../../declarations/type-aliases/Resolver.md)\<`V`\>
 
-Defined in: [models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/ResolverBinding.ts#L20)
+Defined in: [models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/ResolverBinding.ts#L20)
 
 The resolver function used to provide the binding value.
 
@@ -82,7 +82,7 @@ and dependency resolution. It should return an instance of type `V`.
 
 > `protected` `optional` **value**: `V`
 
-Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Binding.ts#L20)
+Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L20)
 
 The value held by the binding.
 
@@ -98,7 +98,7 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 > `protected` **isResolved**(): `boolean`
 
-Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Binding.ts#L36)
+Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L36)
 
 Check if the value has been resolved.
 
@@ -118,7 +118,7 @@ A boolean indicating whether the value has been resolved.
 
 > **resolve**(`container`): `undefined` \| `V`
 
-Defined in: [models/Singleton.ts:26](https://github.com/stonemjs/service-container/blob/cf80d15a9884720f3c9b3cfe1c53c3f6b0c62c38/src/models/Singleton.ts#L26)
+Defined in: [models/Singleton.ts:26](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Singleton.ts#L26)
 
 Resolve and return the value of the binding.
 

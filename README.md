@@ -333,6 +333,12 @@ With this library, managing dependencies in your application becomes much simple
 
 The Stone Service Container simplifies dependency management in your applications, making them more modular, testable, and maintainable. It provides tools for binding instances, singletons, and factories, as well as auto and conditional binding. By leveraging Inversion of Control and dependency injection, the service container ensures efficient, flexible, and scalable management of dependencies, fitting projects of any size.
 
+## Learn More
+
+This package is part of the Stone.js ecosystem, a modern JavaScript framework built around the Continuum Architecture.
+
+Explore the full documentation: https://stonejs.com
+
 ## API documentation
 
 - [API](https://github.com/stonemjs/service-container/blob/main/docs/modules.md)
