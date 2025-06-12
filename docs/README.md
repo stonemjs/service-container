@@ -1,8 +1,4 @@
-**Service Container Documentation**
-
-***
-
-# Service Container Documentation
+# Service Container
 
 ## Modules
 

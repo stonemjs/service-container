@@ -1,12 +1,4 @@
-[**Service Container Documentation**](../../../README.md)
-
-***
-
-[Service Container Documentation](../../../README.md) / [models/Factory](../README.md) / Factory
-
 # Class: Factory\<V\>
-
-Defined in: [models/Factory.ts:15](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Factory.ts#L15)
 
 Class representing a Factory.
 
@@ -33,9 +25,9 @@ The type of value that this binding holds.
 
 ### Constructor
 
-> **new Factory**\<`V`\>(`resolver`): `Factory`\<`V`\>
-
-Defined in: [models/ResolverBinding.ts:28](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/ResolverBinding.ts#L28)
+```ts
+new Factory<V>(resolver): Factory<V>;
+```
 
 Create a new instance of ResolverBinding.
 
@@ -63,9 +55,9 @@ ContainerError if the resolver is not a function.
 
 ### resolver
 
-> `protected` `readonly` **resolver**: [`Resolver`](../../../declarations/type-aliases/Resolver.md)\<`V`\>
-
-Defined in: [models/ResolverBinding.ts:20](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/ResolverBinding.ts#L20)
+```ts
+protected readonly resolver: Resolver<V>;
+```
 
 The resolver function used to provide the binding value.
 
@@ -80,9 +72,9 @@ and dependency resolution. It should return an instance of type `V`.
 
 ### value?
 
-> `protected` `optional` **value**: `V`
-
-Defined in: [models/Binding.ts:20](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L20)
+```ts
+protected optional value: V;
+```
 
 The value held by the binding.
 
@@ -96,9 +88,9 @@ This value is resolved at runtime, either directly or through a resolver functio
 
 ### isResolved()
 
-> `protected` **isResolved**(): `boolean`
-
-Defined in: [models/Binding.ts:36](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Binding.ts#L36)
+```ts
+protected isResolved(): boolean;
+```
 
 Check if the value has been resolved.
 
@@ -116,9 +108,9 @@ A boolean indicating whether the value has been resolved.
 
 ### resolve()
 
-> **resolve**(`container`): `V`
-
-Defined in: [models/Factory.ts:26](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/models/Factory.ts#L26)
+```ts
+resolve(container): V;
+```
 
 Resolve and return the value of the binding.
 

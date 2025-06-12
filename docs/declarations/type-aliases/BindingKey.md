@@ -1,14 +1,8 @@
-[**Service Container Documentation**](../../README.md)
-
-***
-
-[Service Container Documentation](../../README.md) / [declarations](../README.md) / BindingKey
-
 # Type Alias: BindingKey
 
-> **BindingKey** = `number` \| `boolean` \| `string` \| `Function` \| `object` \| `symbol`
-
-Defined in: [declarations.ts:40](https://github.com/stonemjs/service-container/blob/5a701d60c47419b2e55af779088aed1ae998b66e/src/declarations.ts#L40)
+```ts
+type BindingKey = number | boolean | string | Function | object | symbol;
+```
 
 A union type representing the possible keys that can be used to bind values in the container.
 
