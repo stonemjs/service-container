@@ -5,6 +5,13 @@ All notable changes to the "Stone.js Service container" extension will be docume
 ## Unreleased
 
 
+## [0.1.1](https://github.com/stone-foundation/stone-js-service-container/compare/v0.1.0...v0.1.1) (2025-06-12)
+
+
+### Miscellaneous Chores
+
+* migrate to stone-foundation, integrate sonar cloud and add security policy ([#16](https://github.com/stone-foundation/stone-js-service-container/issues/16)) ([b23c6dc](https://github.com/stone-foundation/stone-js-service-container/commit/b23c6dc962dcf30abb2b575b8424646c99ea2c9d))
+
 ## [0.1.0](https://github.com/stone-foundation/stone-js-service-container/compare/v0.0.44...v0.1.0) (2025-05-12)
 
 
