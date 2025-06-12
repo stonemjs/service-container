@@ -5,44 +5,44 @@ All notable changes to the "Stone.js Service container" extension will be docume
 ## Unreleased
 
 
-## [0.1.0](https://github.com/stonemjs/service-container/compare/v0.0.44...v0.1.0) (2025-05-12)
+## [0.1.0](https://github.com/stone-foundation/stone-js-service-container/compare/v0.0.44...v0.1.0) (2025-05-12)
 
 
 ### Features
 
-* fix proxy issue and change the license to MIT ([0a34b2a](https://github.com/stonemjs/service-container/commit/0a34b2a7bbc717ca808ccc9b15f0b1794b6d1d46))
+* fix proxy issue and change the license to MIT ([0a34b2a](https://github.com/stone-foundation/stone-js-service-container/commit/0a34b2a7bbc717ca808ccc9b15f0b1794b6d1d46))
 
-## [0.0.44](https://github.com/stonemjs/service-container/compare/v0.0.43...v0.0.44) (2025-01-04)
-
-
-### Miscellaneous Chores
-
-* update container's make method return type ([020e91c](https://github.com/stonemjs/service-container/commit/020e91c7b464b5fa785c869702b6bef84b206d51))
-
-## [0.0.43](https://github.com/stonemjs/service-container/compare/v0.0.42...v0.0.43) (2024-11-19)
+## [0.0.44](https://github.com/stone-foundation/stone-js-service-container/compare/v0.0.43...v0.0.44) (2025-01-04)
 
 
 ### Miscellaneous Chores
 
-* remove register, asAlias API, add create factory method and make constructor private ([1cb7f6d](https://github.com/stonemjs/service-container/commit/1cb7f6dac6e15193d4bf42125eca5f5db5f771b5))
+* update container's make method return type ([020e91c](https://github.com/stone-foundation/stone-js-service-container/commit/020e91c7b464b5fa785c869702b6bef84b206d51))
 
-## [0.0.42](https://github.com/stonemjs/service-container/compare/v0.0.4...v0.0.42) (2024-11-16)
+## [0.0.43](https://github.com/stone-foundation/stone-js-service-container/compare/v0.0.42...v0.0.43) (2024-11-19)
 
 
 ### Miscellaneous Chores
 
-* add rollup plugin to bundle types ([0ff9b91](https://github.com/stonemjs/service-container/commit/0ff9b9142bca163f80869df46a66780942ea289c))
+* remove register, asAlias API, add create factory method and make constructor private ([1cb7f6d](https://github.com/stone-foundation/stone-js-service-container/commit/1cb7f6dac6e15193d4bf42125eca5f5db5f771b5))
 
-## [0.0.4](https://github.com/stonemjs/service-container/compare/v0.0.2...v0.0.4) (2024-11-14)
+## [0.0.42](https://github.com/stone-foundation/stone-js-service-container/compare/v0.0.4...v0.0.42) (2024-11-16)
+
+
+### Miscellaneous Chores
+
+* add rollup plugin to bundle types ([0ff9b91](https://github.com/stone-foundation/stone-js-service-container/commit/0ff9b9142bca163f80869df46a66780942ea289c))
+
+## [0.0.4](https://github.com/stone-foundation/stone-js-service-container/compare/v0.0.2...v0.0.4) (2024-11-14)
 
 
 ### Documentation
 
-* improve documentation ([d107e53](https://github.com/stonemjs/service-container/commit/d107e53cee1123db0ac4e6e4969717095de089cd))
+* improve documentation ([d107e53](https://github.com/stone-foundation/stone-js-service-container/commit/d107e53cee1123db0ac4e6e4969717095de089cd))
 
 ## 0.0.2 (2024-11-13)
 
 
 ### Features
 
-* implement service container ([9c0969a](https://github.com/stonemjs/service-container/commit/9c0969a4246c13739f0f1d6c59c60d8e05f0518f))
+* implement service container ([9c0969a](https://github.com/stone-foundation/stone-js-service-container/commit/9c0969a4246c13739f0f1d6c59c60d8e05f0518f))

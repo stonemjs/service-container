@@ -4,18 +4,20 @@
 [![npm](https://img.shields.io/npm/v/@stone-js/service-container)](https://www.npmjs.com/package/@stone-js/service-container)
 [![npm](https://img.shields.io/npm/dm/@stone-js/service-container)](https://www.npmjs.com/package/@stone-js/service-container)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025)
-[![Build Status](https://github.com/stonemjs/service-container/actions/workflows/main.yml/badge.svg)](https://github.com/stonemjs/service-container/actions/workflows/main.yml)
-[![Publish Package to npmjs](https://github.com/stonemjs/service-container/actions/workflows/release.yml/badge.svg)](https://github.com/stonemjs/service-container/actions/workflows/release.yml)
-[![codecov](https://codecov.io/gh/stonemjs/service-container/graph/badge.svg?token=5MKS9179YL)](https://codecov.io/gh/stonemjs/service-container)
-[![CodeQL](https://github.com/stonemjs/service-container/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/stonemjs/service-container/security/code-scanning)
-[![Dependabot Status](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/stonemjs/service-container/network/updates)
+[![Build Status](https://github.com/stone-foundation/stone-js-service-container/actions/workflows/main.yml/badge.svg)](https://github.com/stone-foundation/stone-js-service-container/actions/workflows/main.yml)
+[![Publish Package to npmjs](https://github.com/stone-foundation/stone-js-service-container/actions/workflows/release.yml/badge.svg)](https://github.com/stone-foundation/stone-js-service-container/actions/workflows/release.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=stone-foundation_stone-js-service-container&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=stone-foundation_stone-js-service-container)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=stone-foundation_stone-js-service-container&metric=coverage)](https://sonarcloud.io/summary/new_code?id=stone-foundation_stone-js-service-container)
+[![Security Policy](https://img.shields.io/badge/Security-Policy-blue.svg)](./SECURITY.md)
+[![CodeQL](https://github.com/stone-foundation/stone-js-service-container/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/stone-foundation/stone-js-service-container/security/code-scanning)
+[![Dependabot Status](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/stone-foundation/stone-js-service-container/network/updates)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 IoC Service Container with proxy resolver and destructuring injection provides a very simple, centralized container that stores and resolves libraries, objects, and values to better organize code, manage dependencies, and enhance testability.
 
 ---
 
-## Synopsis
+## Overview
 
 The **Service Container** is an advanced JavaScript/TypeScript library that helps you manage dependencies effectively in your applications. It utilizes the Inversion of Control (IoC) pattern to simplify dependency injection, allowing you to create highly decoupled and maintainable codebases.
 
@@ -337,15 +339,15 @@ The Stone Service Container simplifies dependency management in your application
 
 This package is part of the Stone.js ecosystem, a modern JavaScript framework built around the Continuum Architecture.
 
-Explore the full documentation: https://stonejs.com
+Explore the full documentation: https://stonejs.dev
 
 ## API documentation
 
-- [API](https://github.com/stonemjs/service-container/blob/main/docs/modules.md)
+- [API](https://github.com/stone-foundation/stone-js-service-container/blob/main/docs/modules.md)
 
 ## Contributing
 
-See [Contributing Guide](https://github.com/stonemjs/service-container/blob/main/CONTRIBUTING.md).
+See [Contributing Guide](https://github.com/stone-foundation/stone-js-service-container/blob/main/CONTRIBUTING.md).
 
 ## Credits
 - [Laravel Service Container](https://github.com/illuminate/container)

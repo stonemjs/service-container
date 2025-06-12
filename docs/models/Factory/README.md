@@ -1,9 +1,3 @@
-[**Service Container Documentation**](../../README.md)
-
-***
-
-[Service Container Documentation](../../README.md) / models/Factory
-
 # models/Factory
 
 ## Classes

@@ -1,9 +1,3 @@
-[**Service Container Documentation**](../../README.md)
-
-***
-
-[Service Container Documentation](../../README.md) / errors/ContainerError
-
 # errors/ContainerError
 
 ## Classes
